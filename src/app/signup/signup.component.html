@@ -1,0 +1,158 @@
+<div class="body">
+    <div class="login">
+        <div style="     padding: 12vh 4vw;">
+
+            <div class="row1">
+                <div class="  user-inputBox">
+                    <div style="    position: relative;">
+                        <div class="small">
+                            <img mat-card-image src="../assets/logo.jpeg" alt="Photo of a Shiba Inu" class="animation">
+                        </div>
+                        <div class="small">
+                            <img mat-card-image src="../assets/illustration.svg" alt="Photo of a Shiba Inu" class="animation">
+                        </div>
+                        <div class="small">
+                            <h1 class="sub-tile small animation">
+                                A few more clicks to
+                                <br>sign in to your account.
+                            </h1>
+                            <h3 class="sub-tile1 animation">Manage all your e-doc accounts in one place</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="small1">
+                    <div *ngIf="firstStep">
+                        <h1 class="signup-title animation1">
+                            Sign Up
+                        </h1>
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+                            <!-- NAME -->
+                            <mat-form-field appearance="outline" class="example-full-width animation1">
+                                <mat-label>Name </mat-label>
+                                <input matInput formControlName="fullname" type="text" placeholder="enter your Fullname " required ngModel>
+                                <mat-error *ngIf="f.fullname && f.fullname.errors && (f.fullname.dirty || f.fullname.touched || submitted)">
+                                    <span *ngIf="  f.fullname.errors.required">
+                    Fullname is Required
+                  </span>
+                                    <span *ngIf=" f.fullname.errors.minlength">
+                    Please enter a FullName at least 4 characters.
+                  </span>
+
+
+                                </mat-error>
+
+                            </mat-form-field>
+
+                            <!-- Email -->
+                            <mat-form-field appearance="outline" class="example-full-width animation1">
+                                <mat-label>Email </mat-label>
+                                <input matInput formControlName="email" type="email" placeholder="enter your Email " required ngModel>
+                                <mat-error *ngIf="f.email && f.email.errors && (f.email.dirty || f.email.touched || submitted)">
+                                    <span *ngIf="  f.email.errors.required">
+                    Email is Required
+                  </span>
+                                    <span *ngIf="f.email.errors.pattern">
+                    Email must be a valid email address
+                  </span>
+
+
+                                </mat-error>
+
+
+                            </mat-form-field>
+                            <span class="warning animation1">
+                {{emailError}}
+              </span>
+                            <!-- PHONE NUMBER -->
+                            <mat-form-field appearance="outline" class="example-full-width animation1">
+                                <mat-label>Phone NUmber </mat-label>
+                                <input matInput formControlName="phone" type="phone" placeholder="enter your phone Number " required ngModel>
+                                <mat-error *ngIf="f.phone && f.phone.errors && (f.phone.dirty || f.phone.touched || submitted)">
+                                    <span *ngIf="  f.phone.errors.required">
+                    Mobile Number is required
+                  </span>
+                                    <span *ngIf="f.phone.errors.pattern">
+                    Please, Enter phone number with plus and country code
+                  </span>
+
+                                </mat-error>
+                                <span class="warning">
+                  {{phoneError}}
+                </span>
+                            </mat-form-field>
+                            <!-- PASSWORD -->
+                            <mat-form-field appearance="outline" class="example-full-width animation1">
+                                <mat-label>Password </mat-label>
+                                <input matInput formControlName="password" type="password" placeholder="enter your Password " required ngModel>
+                                <mat-error *ngIf="f.password && f.password.errors && (f.password.dirty || f.password.touched || submitted)">
+                                    <span *ngIf="  f.password.errors.required">
+                    Please enter a password.
+                  </span>
+                                    <span *ngIf=" f.password.errors.maxlength">
+                    Please enter a Email no more than 16 characters.
+                  </span>
+                                    <span *ngIf=" f.password.errors.minlength">
+                    Please enter a password at least 6 characters.
+                  </span>
+                                </mat-error>
+                            </mat-form-field>
+                            <section>
+                                <div class="register ">
+                                    <button mat-flat-button color="primary" class="mat-button-width " type="submit">Register</button>
+                                    <p style="margin-top: 5vh;">
+                                        Already have an account ? <a routerLink="/login" routerLinkActive="active">Login</a>
+                                    </p>
+
+
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                    <div *ngIf="stepTwo">
+                        <h1 class="signup-title ">
+                            verify Your OTP <br>
+                            <p style="font-size: 12px; margin: 0;" class="">
+                                OTP Sent to Your Email Id {{userData}}
+                            </p>
+                        </h1>
+
+                        <form [formGroup]="verify" (ngSubmit)="verifyotp(verify)">
+
+
+                            <mat-form-field appearance="outline" class="example-full-width ">
+                                <mat-label>OTP number </mat-label>
+                                <input matInput formControlName="number" type="number" placeholder="enter your number " required ngModel>
+                                <mat-error *ngIf="f.number && f.number.errors && (f.number.dirty || f.number.touched || submitted)">
+                                    <span *ngIf="  f.number.errors.required">
+                    OTP is required.
+                  </span>
+                                    <span *ngIf=" f.number.errors.maxlength">
+                    Please enter a Email no more than 16 characters.
+                  </span>
+
+                                </mat-error>
+                            </mat-form-field>
+
+
+
+                            <section>
+                                <div class="example-button-row ">
+                                    <button mat-flat-button color="primary" class="mat-button-width" type="submit">Verify</button>
+                                    <button mat-flat-button color="primary" class="mat-button-width" (click)="resendOtp()">Resend</button>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                    <div class="abc" *ngIf="stepthree">
+                        <h2>successfully verified your email go to login page</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
