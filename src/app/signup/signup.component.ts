@@ -16,6 +16,7 @@ export class SignupComponent implements OnInit {
   userData: any;
   emailError: any;
   phoneError: any;
+  emailAlredyThere = false;
   constructor(
     private formBuilder: FormBuilder,
     private cd: CredentialsService) {
@@ -57,28 +58,27 @@ export class SignupComponent implements OnInit {
 
   }
   onSubmit(registerForm: any) {
+    this.emailError = '';
+    this.phoneError = '';
     this.userData = registerForm.value.email;
     this.submitted = true;
     const obj = registerForm.value;
     // obj.id = null;
     this.cd.addUser(obj).subscribe((resp: any) => {
-      // registerForm.form.reset();
+      // this.registerForm.reset();
       console.log(resp);
       if (resp.status === 201) {
         this.firstStep = false;
         this.stepTwo = true;
-        alert('successfull added');
         this.sendotp();
       }
       if (resp.status === 500) {
-        if (resp.error === 'auth/email-already-exists') {
-          alert('Email Already exists')
+        if (resp.error === 'auth/email-already-exists' ) {
           this.emailError = 'Email Already exists';
-        } else
-          if (resp.error === 'auth/invalid-phone-number') {
-            this.phoneError = 'Please add country code';
-          }
-
+        } 
+        if (resp.error === 'auth/phone-number-already-exists') {
+          this.phoneError = 'phone-number-already-exists';
+        }
       }
     }, err => {
       console.log(err);

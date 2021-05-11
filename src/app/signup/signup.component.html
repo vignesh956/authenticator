@@ -58,11 +58,11 @@
 
                                 </mat-error>
 
-
+                                <span style="color: #f44336;">
+                  {{emailError}}
+                </span>
                             </mat-form-field>
-                            <span class="warning animation1">
-                {{emailError}}
-              </span>
+
                             <!-- PHONE NUMBER -->
                             <mat-form-field appearance="outline" class="example-full-width animation1">
                                 <mat-label>Phone NUmber </mat-label>
@@ -76,7 +76,7 @@
                   </span>
 
                                 </mat-error>
-                                <span class="warning">
+                                <span style="color: #f44336;">
                   {{phoneError}}
                 </span>
                             </mat-form-field>
@@ -129,7 +129,7 @@
                                     <span *ngIf=" f.number.errors.maxlength">
                     Please enter a Email no more than 16 characters.
                   </span>
-
+                                    <span style="color: red;">otpverify</span>
                                 </mat-error>
                             </mat-form-field>
 

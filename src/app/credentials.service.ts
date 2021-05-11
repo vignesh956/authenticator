@@ -36,6 +36,7 @@ export class CredentialsService {
 
 
   addUser(obj: any) {
+    console.log(obj , 'aaaaaaaaaaaaaaaaaaaaaaaaa')
     return this.http.post('https://us-central1-etop-sign-655ae.cloudfunctions.net/app/user/create', obj);
   }
 
@@ -57,7 +58,6 @@ export class CredentialsService {
   }
   login(email: string, password: string) {
     console.log(email);
-    alert('login');
     return this.angularFireAuth.signInWithEmailAndPassword(email, password);
   }
   logout() {

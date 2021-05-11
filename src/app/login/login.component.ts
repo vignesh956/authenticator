@@ -9,6 +9,9 @@ import { CredentialsService } from '../credentials.service';
 })
 export class LoginComponent implements OnInit {
   verifiedemail: boolean;
+  emailError: any;
+  phoneError:any;
+
   constructor(private formBuilder: FormBuilder,
     private cd: CredentialsService) {
     this.submitted = false;
@@ -22,8 +25,8 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
 
-  // email: any = this.loginForm.value.email;
-  // password: any = this.loginForm.value.password;
+
+
   ngOnInit(): void {
 
   }
@@ -31,21 +34,19 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(loginForm: any): void {
+    this.emailError = '';
+    this.phoneError = '';
     this.submitted = true;
     if (loginForm.invalid) { return; }
+    console.log(this.loginForm);
 
-    this.cd.login(this.loginForm.value.email, this.loginForm.value.password).then(res => {
-      var xyz = res.user?.emailVerified;
-      // const uid = res.user?.uid;
-      // console.log(uid);
+    this.cd.login(this.loginForm.value.email, this.loginForm.value.password).then((res: any) => {
+      console.log(res, 'sssssssssssssssssssss');
+
+ 
       const uid = {
         'uid': res.user?.emailVerified
       };
-
-      // if (!res.user?.emailVerified) {
-      //   alert('stop');
-      //   return;
-      // }
       this.cd.sendUid(uid).subscribe((resp: any) => {
         console.log(resp);
 
@@ -65,8 +66,15 @@ export class LoginComponent implements OnInit {
 
       });
 
-    }, (error: any) => {
-
+  
+    },(err)=>{
+      console.log(err);
+      if (err.code === 'auth/user-not-found') {
+        this.emailError = 'Email Already exists';
+      }
+      if (err.code === 'auth/wrong-password') {
+        this.emailError = 'Password Invalid';
+      }
     });
 
   }

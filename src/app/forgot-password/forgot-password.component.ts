@@ -69,17 +69,17 @@ export class ForgotPasswordComponent implements OnInit {
 
 
   resendOtp() {
-    alert('hello');
     this.sendotp();
   }
 
   verifyotp(send: any) {
     const payload = {
       'email': this.forgetPassword.value.email,
-      'otp': this.verify.value.password
+      'otp': this.verify.value.number
     };
 
     this.cd.verifyOtp(payload).subscribe((res: any) => {
+      alert('vvvv')
       if (res.status === 200) {
         this.firstStep = false;
         this.stepTwo = false;
@@ -105,7 +105,7 @@ export class ForgotPasswordComponent implements OnInit {
       }
       if (res.status === 500) {
         if (res.error === 'incorrect-otp') {
-          alert('give correct format');
+          // alert('give correct format');
         }
 
       }
