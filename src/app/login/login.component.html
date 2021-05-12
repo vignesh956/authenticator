@@ -1,0 +1,85 @@
+<div class="body">
+    <div class="login">
+        <div style="padding: 12vh 0;">
+            <div class="row1">
+                <div class="  user-inputBox">
+                    <div style="    position: relative;">
+                        <div class="small">
+                            <img mat-card-image src="../assets/logo.jpeg" alt="Photo of a Shiba Inu" class="animation">
+                        </div>
+                        <div class="small">
+                            <img mat-card-image src="../assets/illustration.svg" alt="Photo of a Shiba Inu" class="animation">
+                        </div>
+                        <div class="small">
+                            <h1 class="sub-tile small animation">
+                                A few more clicks to
+                                <br>sign in to your account.
+                            </h1>
+                            <h3 class="sub-tile1 animation">Manage all your e-doc accounts in one place</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="small1">
+                    <div>
+                        <h1 class="signup-title animation1">
+                            Sign In
+                        </h1>
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                            <div>
+                                <mat-form-field appearance="outline" class="example-full-width animation1">
+                                    <mat-label>Email </mat-label>
+                                    <input matInput formControlName="email" type="email" placeholder="enter your Email " required ngModel>
+                                    <mat-error *ngIf="f.email && f.email.errors && (f.email.dirty || f.email.touched || submitted)">
+                                        <span *ngIf="  f.email.errors.required">
+                      Email is Required
+                    </span>
+                                        <span *ngIf="f.email.errors.pattern">
+                      Email must be a valid email address
+                    </span>
+
+                                    </mat-error>
+                                    <span style="color: #f44336;">
+                                        {{emailError  }}
+                                      </span>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" class="example-full-width animation1">
+                                    <mat-label>Password </mat-label>
+                                    <input matInput formControlName="password" type="password" placeholder="enter your Password " required ngModel>
+                                    <mat-error *ngIf="f.password && f.password.errors && (f.password.dirty || f.password.touched || submitted)">
+                                        <span *ngIf="  f.password.errors.required">
+                      Please enter a password.
+                    </span>
+                                        <span *ngIf=" f.password.errors.maxlength">
+                      Please enter a Email no more than 16 characters.
+                    </span>
+                                        <span *ngIf=" f.password.errors.minlength">
+                      Please enter a password at least 6 characters.
+                    </span>
+                                    </mat-error>
+                                    <span style="color: #f44336;">
+                                        {{phoneError}}  
+                                      </span>
+                                </mat-form-field>
+                                <p>
+                                    <!-- class="titel-forget" -->
+                                    <a routerLink="/forget-password" routerLinkActive="active" class="animation1">Forgot Password?</a>
+                                </p>
+                            </div>
+                            <section>
+                                <div class="example-button-row">
+                                    <button mat-flat-button color="primary" class="mat-button-width animation1" type="submit">Login</button>
+                                    <p style="margin-top: 5vh;" class="animation1">
+                                        Now is the time to <a routerLink="/signup" routerLinkActive="active">Sign Up</a> to the eTOPSign!
+                                    </p>
+
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
