@@ -52,13 +52,11 @@ export class LoginComponent implements OnInit {
 
 
         if (resp.status === 200) {
-          alert('UID sent Successfull');
           const s = resp.data?.token;
           localStorage.setItem('token', s);
         }
         if (resp.status === 404) {
           if (resp.error === 'required-fields') {
-            alert('required-fields');
           }
         }
 
@@ -73,7 +71,7 @@ export class LoginComponent implements OnInit {
         this.emailError = 'Email Already exists';
       }
       if (err.code === 'auth/wrong-password') {
-        this.emailError = 'Password Invalid';
+        this.phoneError = 'Password Invalid';
       }
     });
 

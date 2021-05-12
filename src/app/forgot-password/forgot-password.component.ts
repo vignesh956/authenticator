@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CredentialsService } from '../credentials.service';
 
 @Component({
@@ -10,6 +11,9 @@ import { CredentialsService } from '../credentials.service';
 export class ForgotPasswordComponent implements OnInit {
   submitted: boolean;
   userData: any;
+  otpIncorrect: any;
+  abc: any;
+  passwordInvalid: any;
   forgetPassword = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.pattern('^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9_.-]+)\\.([a-zA-Z]{2,5})$')]),
     password: new FormControl('', [Validators.required]),
@@ -28,7 +32,8 @@ export class ForgotPasswordComponent implements OnInit {
   stepthree: boolean;
   constructor(
     private formBuilder: FormBuilder,
-    private cd: CredentialsService) {
+    private cd: CredentialsService,
+    public rter: Router) {
     this.submitted = false;
     this.firstStep = true;
     this.stepTwo = false;
@@ -48,12 +53,13 @@ export class ForgotPasswordComponent implements OnInit {
       if (res.status === 200) {
         this.firstStep = false;
         this.stepTwo = true;
-        alert('check your maill')
         console.log(res, 'check your Email Id');
       }
       if (res.status === 404) {
         if (res.error === 'invalid-email') {
-          alert('invalid-email');
+          this.abc = 'invalid-email';
+          console.log(this.abc);
+
         }
 
       }
@@ -79,7 +85,6 @@ export class ForgotPasswordComponent implements OnInit {
     };
 
     this.cd.verifyOtp(payload).subscribe((res: any) => {
-      alert('vvvv')
       if (res.status === 200) {
         this.firstStep = false;
         this.stepTwo = false;
@@ -88,24 +93,30 @@ export class ForgotPasswordComponent implements OnInit {
       }
       if (res.status === 500) {
         if (res.error === 'incorrect-otp') {
-          alert('incorrect-otp');
+          this.otpIncorrect = 'incorrect OTP';
         }
 
       }
     });
   }
+
+
+
+
   createNewPassword(forgetPassword: any) {
     const newPassword = {
       'email': this.forgetPassword.value.email,
-      'password': this.forgetPassword.value.email
+      'password': this.forgetPassword.value.password
     };
     this.cd.updatepassword(newPassword).subscribe((res: any) => {
       if (res.status === 200) {
-        console.log('Password Updated Successfully');
+
+        console.log(res, 'Password Updated Successfully');
+        this.rter.navigate(['/login']);
       }
       if (res.status === 500) {
-        if (res.error === 'incorrect-otp') {
-          // alert('give correct format');
+        if (res.error === 'auth/wrong-password') {
+          this.passwordInvalid = 'Password must be 6 character';
         }
 
       }

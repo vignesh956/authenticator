@@ -54,6 +54,7 @@ export class CredentialsService {
   }
 
   updatepassword(newPassword: any) {
+    console.log(newPassword, "jjjjjjjjjjjjjjjjjjjjjjjjjjjjj")
     return this.http.post('https://us-central1-etop-sign-655ae.cloudfunctions.net/app/user/forgot-password', newPassword);
   }
   login(email: string, password: string) {
