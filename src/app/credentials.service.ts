@@ -43,6 +43,11 @@ export class CredentialsService {
   sendOtp(email: any) {
     return this.http.post('https://us-central1-etop-sign-655ae.cloudfunctions.net/app/user/send-otp', email);
   }
+
+  resendOtp(payload: any){
+    console.log(payload ,  "resend otp")
+    return this.http.post('https://us-central1-etop-sign-655ae.cloudfunctions.net/app/user/send-otp' , payload)
+  }
   verifyOtp(payload: any) {
     return this.http.post('https://us-central1-etop-sign-655ae.cloudfunctions.net/app/user/verify-otp', payload);
   }

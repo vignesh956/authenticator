@@ -19,6 +19,11 @@ export class ForgotPasswordComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
 
+
+  newPassword = new FormGroup({
+    password: new FormControl('', [Validators.required]),
+  });
+
   verify = new FormGroup({
     number: new FormControl('', [
       Validators.required,
@@ -40,12 +45,15 @@ export class ForgotPasswordComponent implements OnInit {
     this.stepthree = false;
   }
   get f() { return this.forgetPassword.controls; }
+  get g() { return this.newPassword.controls; }
   ngOnInit(): void { }
   onSubmit(forgetPassword: any) {
     this.userData = forgetPassword.value.email;
     this.sendotp();
   }
+
   sendotp() {
+    if (this.forgetPassword.invalid) { return; }
     const email = {
       'email': this.forgetPassword.value.email
     };
@@ -66,19 +74,20 @@ export class ForgotPasswordComponent implements OnInit {
 
     });
   }
-
-
-
-
-
-
-
-
   resendOtp() {
-    this.sendotp();
+    // if (this.forgetPassword.invalid) { return; }
+    const payload = {
+      'email': this.forgetPassword.value.email
+    };
+    this.cd.resendOtp(payload).subscribe((res: any) => {
+      if (res.status === 200) {
+        console.log(res, 'check your Email Id cccccccccccccccc');
+      }
+    });
   }
 
   verifyotp(send: any) {
+  
     const payload = {
       'email': this.forgetPassword.value.email,
       'otp': this.verify.value.number
@@ -106,7 +115,7 @@ export class ForgotPasswordComponent implements OnInit {
   createNewPassword(forgetPassword: any) {
     const newPassword = {
       'email': this.forgetPassword.value.email,
-      'password': this.forgetPassword.value.password
+      'password': this.newPassword.value.password
     };
     this.cd.updatepassword(newPassword).subscribe((res: any) => {
       if (res.status === 200) {

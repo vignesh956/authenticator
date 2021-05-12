@@ -127,7 +127,7 @@
                             </p>
                         </h1>
 
-                        <form [formGroup]="verify" (ngSubmit)="verifyotp(verify)">
+                        <form [formGroup]="verify">
 
 
                             <mat-form-field appearance="outline" class="example-full-width ">
@@ -149,7 +149,7 @@
 
                             <section>
                                 <div class="example-button-row ">
-                                    <button mat-flat-button color="primary" class="mat-button-width" type="submit">Verify</button>
+                                    <button mat-flat-button color="primary" class="mat-button-width" (click)="verifyotp(verify)">Verify</button>
                                     <button mat-flat-button color="primary" class="mat-button-width" (click)="resendOtp()">Resend</button>
                                 </div>
                             </section>
