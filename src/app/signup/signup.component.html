@@ -47,31 +47,30 @@
                             <div class="abc">
                                 <mat-form-field appearance="outline" class="example-full-width animation1 ">
                                     <mat-label>Email </mat-label>
-                                    <input matInput formControlName="email" type="email" placeholder="enter your Email " required ngModel>
-
-
-
+                                    <input matInput formControlName="email" type="email" placeholder="enter your Email " required ngModel (ngModelChange)="emailcheck()">
                                 </mat-form-field>
                                 <mat-error *ngIf="f.email && f.email.errors && (f.email.dirty || f.email.touched || submitted)">
-                                    <span *ngIf="  f.email.errors.required">
+                                    <span *ngIf=" f.email.errors.required">
                     Email is Required
                   </span>
                                     <span *ngIf="f.email.errors.pattern">
                     Email must be a valid email address
                   </span>
-
-
                                 </mat-error>
-                                <span style="color: #f44336;" class="xyz">
 
+                                <span style="color: #f44336;" class="xyz" *ngIf="emailError">
                   {{emailError}}
                 </span>
                             </div>
+
+
+
+
                             <!-- PHONE NUMBER -->
                             <div class="abc">
                                 <mat-form-field appearance="outline" class="example-full-width animation1">
                                     <mat-label>Phone NUmber </mat-label>
-                                    <input matInput formControlName="phone" type="phone" placeholder="enter your phone Number " required ngModel>
+                                    <input matInput formControlName="phone" type="phone" placeholder="enter your phone Number " required ngModel (ngModelChange)="phonenumbercheck()">
 
 
                                 </mat-form-field>
@@ -86,7 +85,7 @@
               Please enter (+Country Codey) Number
             </span> -->
                                 </mat-error>
-                                <span style="color: #f44336;" class="xyz">
+                                <span style="color: #f44336;" class="xyz" *ngIf="phoneError">
                   {{phoneError}}
                 </span>
                             </div>
@@ -109,7 +108,14 @@
                             </mat-form-field>
                             <section>
                                 <div class="register ">
-                                    <button mat-flat-button color="primary" class="mat-button-width " type="submit">Register</button>
+                                    <button mat-flat-button color="primary" class="mat-button-width " type="submit">Register
+
+
+                    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise"
+                      [fullScreen]="false">
+                      <!-- <p style="color: white">Please Wait. </p> -->
+                    </ngx-spinner>
+                  </button>
                                     <p style="margin-top: 5vh;">
                                         Already have an account ? <a routerLink="/login" routerLinkActive="active">Login</a>
                                     </p>
@@ -127,7 +133,7 @@
                             </p>
                         </h1>
 
-                        <form [formGroup]="verify">
+                        <form [formGroup]="verify" (ngModelChange)="otpNumber()">
 
 
                             <mat-form-field appearance="outline" class="example-full-width ">
@@ -138,19 +144,30 @@
                     OTP is required.
                   </span>
                                     <span *ngIf=" f.number.errors.maxlength">
-                    Please enter a Email no more than 16 characters.
+                    Please enter 4 digit 
                   </span>
                                 </mat-error>
 
                             </mat-form-field>
-                            <span style="color: red;">{{otpverify}}</span>
+                            <span style="color: red;" *ngif="otpverify">{{otpverify}}</span>
 
 
 
                             <section>
                                 <div class="example-button-row ">
-                                    <button mat-flat-button color="primary" class="mat-button-width" (click)="verifyotp(verify)">Verify</button>
-                                    <button mat-flat-button color="primary" class="mat-button-width" (click)="resendOtp()">Resend</button>
+                                    <button mat-flat-button color="primary" class="mat-button-width" (click)="verifyotp(verify)">Verify
+
+                    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise"
+                      [fullScreen]="false">
+                      <!-- <p style="color: white">Please Wait. </p> -->
+                    </ngx-spinner>
+                  </button>
+                                    <button mat-flat-button color="primary" class="mat-button-width" (click)="resendOtp()">Resend
+                    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise"
+                      [fullScreen]="false">
+                      <!-- <p style="color: white">Please Wait. </p> -->
+                    </ngx-spinner>
+                  </button>
                                 </div>
                             </section>
                         </form>

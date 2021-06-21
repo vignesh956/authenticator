@@ -82,3 +82,16 @@ body {
         right: 50px;
     }
 }
+
+@media screen and (min-width: 50px) and (max-width: 1200px) {
+    .animation {
+        animation: unset;
+        animation-timing-function: unset;
+        position: unset;
+    }
+    .animation1 {
+        animation: unset;
+        animation-timing-function: unset;
+        position: unset;
+    }
+}

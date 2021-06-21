@@ -4,16 +4,17 @@
 
 export const environment = {
   production: false,
-   firebaseConfig : {
-    apiKey: "AIzaSyDQ_Ywds-kUA10d5RFqnYGoL-n8ymLwswU",
-    authDomain: "etop-sign-655ae.firebaseapp.com",
-    projectId: "etop-sign-655ae",
-    storageBucket: "etop-sign-655ae.appspot.com",
-    messagingSenderId: "123791187005",
-    appId: "1:123791187005:web:bb3b3f356ef25c1c489e54",
-    measurementId: "G-TJLRQ7FERJ"
+  firebaseConfig : {
+    apiKey: "AIzaSyAcom6IAVVsdwSveMUbAJOWOWbu1aGT_yE",
+    authDomain: "etop-sign-2807.firebaseapp.com",
+    projectId: "etop-sign-2807",
+    storageBucket: "etop-sign-2807.appspot.com",
+    messagingSenderId: "437295056907",
+    appId: "1:437295056907:web:79d3edfb9755a82f625f0e",
+    measurementId: "G-VGRRDE4D8K"
   }
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

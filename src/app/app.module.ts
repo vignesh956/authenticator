@@ -11,6 +11,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material/material.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NgxSpinnerModule } from "ngx-spinner";  
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -18,7 +19,13 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashbordComponent } from './dashbord/dashbord.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
+import { CreateDocumentComponent } from './create-document/create-document.component';
+import { ReportsComponent } from './reports/reports.component';
+import { SettingsComponent } from './settings/settings.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +33,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SignupComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    DashboardComponent,
+    DashbordComponent,
+    MenuComponent,
+    HomeComponent,
+    CreateDocumentComponent,
+    ReportsComponent,
+    SettingsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -34,6 +47,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxSpinnerModule  ,
     AppRoutingModule,
     NgxIntlTelInputModule,
     BrowserAnimationsModule,

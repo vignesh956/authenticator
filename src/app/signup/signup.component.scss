@@ -26,7 +26,7 @@
         --tw-bg-opacity: 1;
         background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
         position: relative;
-        min-height: 717px;
+        min-height: 740px;
         // padding-left: 2.5rem;
         // padding-right: 2.5rem;
     }
@@ -51,7 +51,7 @@ mat-grid-tile {
 
 .mat-form-field {
     width: 100%;
-    // margin-bottom: 1vh;
+    margin-bottom: 1vh;
 }
 
 .script-menu>::ng-deep .mat-figure {
@@ -169,7 +169,7 @@ form {
     }
     .mat-form-field {
         width: 100%;
-        margin-bottom: 1vh;
+        margin-bottom: unset;
     }
 }
 
@@ -186,6 +186,7 @@ form {
         // padding-left: 1.4rem;
         // padding-right: 1.4rem;
         align-items: center;
+        justify-content: center !important;
         display: flex;
     }
     .small1 {
@@ -244,4 +245,26 @@ form {
         width: 100%;
         text-align: left;
     }
+}
+
+.ngx-spinner-overlay[_ngcontent-txy-c94] {
+    background-color: rgba(51, 51, 51, 0.8) !important;
+    z-index: 99999 !important;
+    position: fixed !important;
+    opacity: 1 !important;
+    width: 6vw !important;
+    height: 6vh !important;
+    position: absolute !important;
+    border-radius: 4px !important;
+}
+
+.ngx-spinner-overlay {
+    background-color: rgba(51, 51, 51, 0.8) !important;
+    z-index: 99999 !important;
+    position: fixed !important;
+    opacity: 1 !important;
+    width: 6vw !important;
+    height: 6vh !important;
+    position: absolute !important;
+    border-radius: 4px !important;
 }

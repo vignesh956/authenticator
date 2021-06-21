@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { CredentialsService } from '../credentials.service';
 
 @Component({
@@ -10,10 +11,12 @@ import { CredentialsService } from '../credentials.service';
 export class LoginComponent implements OnInit {
   verifiedemail: boolean;
   emailError: any;
-  phoneError:any;
+  phoneError: any;
 
-  constructor(private formBuilder: FormBuilder,
-    private cd: CredentialsService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private cd: CredentialsService,
+    private SpinnerService: NgxSpinnerService,) {
     this.submitted = false;
     this.verifiedemail = true;
   }
@@ -24,33 +27,24 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.pattern('^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9_.-]+)\\.([a-zA-Z]{2,5})$')]),
     password: new FormControl('', [Validators.required]),
   });
-
-
-
   ngOnInit(): void {
-
   }
-
-
-
   onSubmit(loginForm: any): void {
     this.emailError = '';
     this.phoneError = '';
     this.submitted = true;
     if (loginForm.invalid) { return; }
     console.log(this.loginForm);
-
+    this.SpinnerService.show();
     this.cd.login(this.loginForm.value.email, this.loginForm.value.password).then((res: any) => {
+      this.SpinnerService.hide();
       console.log(res, 'sssssssssssssssssssss');
-
- 
       const uid = {
         'uid': res.user?.emailVerified
       };
       this.cd.sendUid(uid).subscribe((resp: any) => {
+        this.SpinnerService.hide();
         console.log(resp);
-
-
         if (resp.status === 200) {
           const s = resp.data?.token;
           localStorage.setItem('token', s);
@@ -59,14 +53,11 @@ export class LoginComponent implements OnInit {
           if (resp.error === 'required-fields') {
           }
         }
-
-
-
       });
-
-  
-    },(err)=>{
+    }, (err) => {
       console.log(err);
+      this.SpinnerService.hide();
+
       if (err.code === 'auth/user-not-found') {
         this.emailError = 'Email Already exists';
       }
@@ -76,23 +67,4 @@ export class LoginComponent implements OnInit {
     });
 
   }
-
-
-  // sendUId() {
-  //   const a = localStorage.getItem('user');
-  //   const user = a ? JSON.parse(a) : [];
-  //   console.log(user);
-  //   const xyz = user.emailVerified;
-  //   const uid = user.uid;
-  //   console.log(xyz);
-  //   if (!xyz === this.verifiedemail) {
-  //     alert('stop');
-  //     return;
-
-  //   }
-  //   this.cd.sendUid(uid).subscribe(res => {
-  //     console.log(res);
-  //   });
-
-  // }
 }

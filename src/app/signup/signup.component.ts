@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators, FormContro
 import { CredentialsService } from '../credentials.service';
 import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-signup',
@@ -15,21 +16,24 @@ export class SignupComponent implements OnInit {
   stepTwo: boolean;
   stepthree: boolean;
   userData: any;
-  emailError: any;
-  phoneError: any;
+  emailError: any = false;
+  phoneError: any = false;
   emailAlredyThere = false;
-  otpverify: any;
+  otpverify: any = false;
   phoneError1: any;
 
 
 
   constructor(
+
     private formBuilder: FormBuilder,
     private cd: CredentialsService,
-    public rter: Router){
+    private SpinnerService: NgxSpinnerService,
+    public rter: Router) {
     this.firstStep = true;
     this.stepTwo = false;
     this.stepthree = false;
+    // this.emailError= false;
   }
 
 
@@ -55,6 +59,9 @@ export class SignupComponent implements OnInit {
     ]),
   });
 
+
+
+
   verify = new FormGroup({
     number: new FormControl('', [
       Validators.required,
@@ -69,14 +76,19 @@ export class SignupComponent implements OnInit {
 
   }
   onSubmit(registerForm: any) {
-    this.emailError = '';
-    this.phoneError = '';
+    // this.emailError = '';
+    // this.phoneError = '';
+
+    console.log(this.registerForm.value , "hhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+
     this.userData = registerForm.value.email;
     this.submitted = true;
     const obj = registerForm.value;
-    if (registerForm.invalid) { return; }
+    // if (registerForm.invalid) { return; }
+    this.SpinnerService.show();
 
     this.cd.addUser(obj).subscribe((resp: any) => {
+      this.SpinnerService.hide();
       console.log(resp);
       if (resp.status === 201) {
         this.firstStep = false;
@@ -85,13 +97,16 @@ export class SignupComponent implements OnInit {
       }
       if (resp.status === 500) {
         if (resp.error === 'auth/email-already-exists') {
+          // this.emailError = 'Email Already exists';
           this.emailError = 'Email Already exists';
         }
         if (resp.error === 'auth/phone-number-already-exists') {
           this.phoneError = 'phone-number-already-exists';
+          this.emailError = false;
         }
         if (resp.error === 'auth/invalid-phone-number') {
           this.phoneError = 'phone-number-invalid';
+          this.emailError = false;
         }
       }
     }, err => {
@@ -104,7 +119,9 @@ export class SignupComponent implements OnInit {
     const email = {
       'email': this.registerForm.value.email,
     };
+    // this.SpinnerService.show(); 
     this.cd.sendOtp(email).subscribe(res => {
+      // this.SpinnerService.hide();  
       console.log(res, 'check your Email Id');
     });
   }
@@ -114,11 +131,14 @@ export class SignupComponent implements OnInit {
   }
 
   verifyotp(send: any) {
+
     const payload = {
       'email': this.registerForm.value.email,
       'otp': this.verify.value.number
     };
+    // this.SpinnerService.show();
     this.cd.verifyOtp(payload).subscribe((res: any) => {
+      // this.SpinnerService.hide();
       if (res.status === 200) {
         this.firstStep = false;
         this.stepTwo = false;
@@ -133,5 +153,31 @@ export class SignupComponent implements OnInit {
 
       }
     });
+  }
+
+  get email_get() { return this.registerForm.get('email'); }
+  get phone_get() { return this.registerForm.get('phone'); }
+  get number_get() { return this.verify.get('number'); }
+  emailcheck() {
+
+    if (this.email_get?.value == "") {
+
+      this.emailError = false;
+
+    }
+  }
+  phonenumbercheck() {
+    if (this.phone_get?.value == "") {
+
+      this.phoneError = false;
+    }
+  }
+
+
+  otpNumber() {
+    if (this.number_get?.value == "") {
+
+      this.phoneError = false;
+    }
   }
 }

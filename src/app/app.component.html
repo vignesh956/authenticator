@@ -1,13 +1,65 @@
+<div class="body" *ngIf="false">
+    <div class="sub-divider">
+        <div class="menu-space">
+            <div class="sidebar-heading">
+                <span style="color: white;">
+          eTOP
+        </span>
+                <span class="font-medium" style="color: white;">signDOC</span>
+            </div>
+
+            <div class="list-group ">
+                <ul class="filed-list">
+                    <li>
+                        <a [routerLink]="['dashboard']" routerLinkActive="active">
+                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i> <span>Dashboard</span> </a>
+                    </li>
+
+                    <li style="    margin-top: 17px;">
+                        <a [routerLink]="['create-document']" routerLinkActive="active">
+                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i><span>
+                                Create Document
+                            </span> </a>
+                    </li>
+                    <li style="    margin-top: 17px;">
+
+                        <a [routerLink]="['home']" routerLinkActive="active">
+                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i><span>
+                                home
+                            </span> </a>
+
+                    </li>
+                    <li style="    margin-top: 17px;">
+
+                        <a [routerLink]="['report']" routerLinkActive="active">
+                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i><span>
+                                Reports
+                            </span> </a>
+
+                    </li>
+                    <li style="    margin-top: 17px;">
+
+                        <a [routerLink]="['setting']" routerLinkActive="active">
+                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i><span>
+                                Settings
+                            </span> </a>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid main-content">
+                <router-outlet></router-outlet>
+                <!-- <app-dashbord></app-dashbord> -->
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 <router-outlet>
-
-
-
-
-
-
-
-
-
-
 </router-outlet>
-<!-- <app-signup></app-signup> -->

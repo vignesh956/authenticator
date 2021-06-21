@@ -1,0 +1,46 @@
+<div class="body" *ngIf="false">
+    <div style="display: flex;">
+        <div style="    width: 15vw;">
+            <div class="sidebar-heading">
+                <span style="color: white;">
+          eTOP
+        </span>
+                <span class="font-medium" style="color: white;">signDOC</span>
+            </div>
+            <div class="list-group ">
+                <ul style="list-style-type:none">
+                    <li class="abc">
+                        <a [routerLink]="['dashboard']" routerLinkActive="active">Dashboard </a>
+                    </li>
+
+                    <li style="    margin-top: 17px;">
+                        <a [routerLink]="['create-document']" routerLinkActive="active">Create Document  </a></li>
+                    <li style="    margin-top: 17px;">
+
+                        <a [routerLink]="['home']" routerLinkActive="active">home </a>
+
+                    </li>
+                    <li style="    margin-top: 17px;">
+
+                        <a [routerLink]="['report']" routerLinkActive="active">Reports </a>
+
+                    </li>
+                    <li style="    margin-top: 17px;">
+
+                        <a [routerLink]="['setting']" routerLinkActive="active">Settings </a>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid main-content">
+                <router-outlet main></router-outlet>
+                <!-- <app-dashbord></app-dashbord> -->
+
+            </div>
+        </div>
+
+    </div>
+</div>
