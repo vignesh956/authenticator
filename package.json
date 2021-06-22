@@ -27,6 +27,7 @@
     "font-awesome": "^4.7.0",
     "google-libphonenumber": "^3.2.19",
     "intl-tel-input": "^17.0.3",
+    "ng-sidebar": "^9.4.2",
     "ngx-bootstrap": "^6.2.0",
     "ngx-intl-tel-input": "^3.1.1",
     "ngx-spinner": "^11.0.1",

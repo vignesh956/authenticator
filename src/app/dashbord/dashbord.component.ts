@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashbord.component.scss']
 })
 export class DashbordComponent implements OnInit {
-
+//  opened=false;
+//   togglesidebar(){
+//     this.opened=!this.opened;
+//   }
   constructor() { }
 
   ngOnInit(): void {

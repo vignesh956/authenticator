@@ -25,7 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { CreateDocumentComponent } from './create-document/create-document.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
-
+import { SidebarModule } from 'ng-sidebar';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,8 @@ import { SettingsComponent } from './settings/settings.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
-    AngularFireStorageModule // Only required for storage features
+    AngularFireStorageModule ,// Only required for storage features
+   SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'setting' , component: SettingsComponent},
   {path: 'menu' , component: MenuComponent},
   {path: 'create-document' , component: CreateDocumentComponent},
-  {path: '' ,  redirectTo:'signup', pathMatch: 'full'},
+  // {path: '' ,  redirectTo:'signup', pathMatch: 'full'},
   // { path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];
 

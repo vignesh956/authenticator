@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project';
+  opened=false;
+  togglesidebar(){
+    this.opened=!this.opened;
+  }
 }
