@@ -141,9 +141,9 @@ mat-sidenav{
 }
 }
 @media screen and (min-width: 50px) and (max-width: 576px) {
-    li {
-        text-align: center;
-    }
+    // li {
+    //     text-align: center;
+    // }
     .sub-divider {
         // display: block;
     }
@@ -219,7 +219,7 @@ ng-sidebar-container{
     color:red;
 }
 .out{
-justify-content: center;
+// justify-content: center;
     width:100%;
     color:black !important;
 }

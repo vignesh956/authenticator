@@ -12,11 +12,11 @@
 <ng-sidebar [opened]="opened">
 <!-- <a (click)="togglesidebar()"><i class="fas fa-bars"></i></a> -->
 <ul class="list" style="list-style-type:none;">
-<li><a class="out"  (click)="togglesidebar()" [routerLink]="['dashboard']" routerLinkActive="active">dashboard</a></li>
-<li><a class="out" (click)="togglesidebar()" [routerLink]="['home']" routerLinkActive="active">Home</a></li>
-<li><a class="out" (click)="togglesidebar()" [routerLink]="['create-document']" routerLinkActive="active">create Document</a></li>
-<li><a class="out" (click)="togglesidebar()" [routerLink]="['report']" routerLinkActive="active">Reports</a></li>
-<li><a class="out" (click)="togglesidebar()" [routerLink]="['setting']" routerLinkActive="active">Settings</a></li>
+<li><a class="out"  (click)="togglesidebar()" [routerLink]="['dashboard']" routerLinkActive="active">  <i class="fas fa-home " ></i>dashboard</a></li>
+<li><a class="out" (click)="togglesidebar()" [routerLink]="['home']" routerLinkActive="active"><i class="fas fa-home " ></i>Home</a></li>
+<li><a class="out" (click)="togglesidebar()" [routerLink]="['create-document']" routerLinkActive="active"> <i class="fas fa-folder-plus"></i>create Document</a></li>
+<li><a class="out" (click)="togglesidebar()" [routerLink]="['report']" routerLinkActive="active"><i class="fas fa-bug" ></i>Reports</a></li>
+<li><a class="out" (click)="togglesidebar()" [routerLink]="['setting']" routerLinkActive="active"><i class="fas fa-cog" ></i>Settings</a></li>
 
 </ul>
 </ng-sidebar>
