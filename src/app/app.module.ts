@@ -60,7 +60,8 @@ import { AuthModule } from '../app/auth/auth.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
-    AngularFireStorageModule // Only required for storage features
+    AngularFireStorageModule ,// Only required for storage features
+   SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
