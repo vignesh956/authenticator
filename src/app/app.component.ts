@@ -22,6 +22,6 @@ export class AppComponent {
       this.snackbarService.openSnackBar('Test!!');
   }
   togglesidebar(){
-    this.opened = !this.opened;
+    this.opened=!this.opened;
   }
 }
