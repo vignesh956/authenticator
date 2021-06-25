@@ -17,21 +17,22 @@
         <div class="col-4">
             <div class="listof">
                 <!-- <img src="../../assets/play.png"> -->
-                <ul>
-                    <li (click)="changePassword = true; signature = false; logout = false ; stampUpload = false;  ">
-                        <a>Change Password</a>
-                    </li>
-                    <li (click)="changePassword = false ; signature = true ; logout = false ; stampUpload = false;">
-                        <a>Upload Signature</a>
-                    </li>
-                    <li (click)="changePassword = false ; signature = false ; logout = false ; stampUpload = true;">
-                        <a>Upload Stamp</a>
-                    </li>
-                    <li (click)="changePassword = false ; signature = false ; logout = true ; stampUpload = false;">
-                        <a>Logout</a>
-                    </li>
-                </ul>
-
+                <div>
+                    <ul>
+                        <li (click)="changePassword = true; signature = false; logout = false ; stampUpload = false;  ">
+                            <a>Change Password</a>
+                        </li>
+                        <li (click)="changePassword = false ; signature = true ; logout = false ; stampUpload = false;">
+                            <a>Upload Signature</a>
+                        </li>
+                        <li (click)="changePassword = false ; signature = false ; logout = false ; stampUpload = true;">
+                            <a>Upload Stamp</a>
+                        </li>
+                        <li (click)="changePassword = false ; signature = false ; logout = true ; stampUpload = false;">
+                            <a>Logout</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="col-8">

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateDocumentComponent } from './create-document/create-document.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { HomeComponent } from './home/home.component';
+import { InboxComponent } from './manage-section/inbox/inbox.component';
 import { MenuComponent } from './menu/menu.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ChangePasswordComponent } from './settings-info/change-password/change-password.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'menu' , component: MenuComponent},
   {path: 'create-document' , component: CreateDocumentComponent},
   {path: 'change' , component: ChangePasswordComponent},
+ 
   // {path: '' ,  redirectTo:'signup', pathMatch: 'full'},
   // { path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];

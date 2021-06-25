@@ -30,6 +30,11 @@ import { ChangePasswordComponent } from './settings-info/change-password/change-
 import { UploadSignatureComponent } from './settings-info/upload-signature/upload-signature.component';
 import { UploadStampComponent } from './settings-info/upload-stamp/upload-stamp.component';
 import { LogoutComponent } from './settings-info/logout/logout.component';
+import { InboxComponent } from './manage-section/inbox/inbox.component';
+import { OutboxComponent } from './manage-section/outbox/outbox.component';
+import { TrashComponent } from './manage-section/trash/trash.component';
+import { AchiveComponent } from './manage-section/achive/achive.component';
+import { DraftComponent } from './manage-section/draft/draft.component';
 
 
 
@@ -46,6 +51,11 @@ import { LogoutComponent } from './settings-info/logout/logout.component';
     UploadSignatureComponent,
     UploadStampComponent,
     LogoutComponent,
+    InboxComponent,
+    OutboxComponent,
+    TrashComponent,
+    AchiveComponent,
+    DraftComponent,
 
   ],
     imports: [
