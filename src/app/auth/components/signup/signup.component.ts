@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
-import { CredentialsService } from '../credentials.service';
+import { CredentialsService } from '../../servieses/credentials.service';
 import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ToasterNotificationService } from "../../../toaster-notification.service"
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbarService } from 'src/app/snackbar.service';
 
 @Component({
   selector: 'app-signup',
@@ -28,8 +31,11 @@ export class SignupComponent implements OnInit {
 
     private formBuilder: FormBuilder,
     private cd: CredentialsService,
+    public snackBar: MatSnackBar,
+    private snackbarService: SnackbarService,
     private SpinnerService: NgxSpinnerService,
-    public rter: Router) {
+    public rter: Router ,
+    public toaster: ToasterNotificationService) {
     this.firstStep = true;
     this.stepTwo = false;
     this.stepthree = false;
@@ -98,14 +104,19 @@ export class SignupComponent implements OnInit {
       if (resp.status === 500) {
         if (resp.error === 'auth/email-already-exists') {
           // this.emailError = 'Email Already exists';
-          this.emailError = 'Email Already exists';
+          this.snackbarService.openSnackBar('Email Already exists !!');
+          // this.toaster.showError("Email Already exists !!", "");
         }
         if (resp.error === 'auth/phone-number-already-exists') {
-          this.phoneError = 'phone-number-already-exists';
+          // this.phoneError = 'phone-number-already-exists';
+          this.snackbarService.openSnackBar('phone-number-already-exists!!');
+          // this.toaster.showError("phone-number-already-exists!!", "");
           this.emailError = false;
         }
         if (resp.error === 'auth/invalid-phone-number') {
-          this.phoneError = 'phone-number-invalid';
+          // this.phoneError = 'phone-number-invalid';
+          this.snackbarService.openSnackBar('phone-number-invalid !!');
+          // this.toaster.showError(" phone-number-invalid !!", "");
           this.emailError = false;
         }
       }
@@ -144,10 +155,14 @@ export class SignupComponent implements OnInit {
         this.stepTwo = false;
         // this.stepthree = true;
         console.log("OTP Verified");
+        // this.toaster.showError(" OTP Verified !!", "");
+        this.snackbarService.openSnackBar(' OTP Verified !!');
         this.rter.navigate(['/login']);
       }
       if (res.status === 500) {
         if (res.error === 'incorrect-otp') {
+          this.snackbarService.openSnackBar('Incorrect OTP   !!');
+          // this.toaster.showError(" Incorrect OTP   !!", "");
           this.otpverify = 'Incorrect OTP';
         }
 

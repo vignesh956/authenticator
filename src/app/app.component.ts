@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { SnackbarService } from './snackbar.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project';
+  opened = false;
+
+  constructor(
+    public snackBar: MatSnackBar,
+    private snackbarService: SnackbarService,
+  ) {}
+
+  @Input() name: string | undefined;
+
+  openSnackBar() {
+      this.snackbarService.openSnackBar('Test!!');
+  }
+  togglesidebar(){
+    this.opened = !this.opened;
+  }
 }

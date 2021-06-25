@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { CredentialsService } from '../credentials.service';
+import { CredentialsService } from '../../servieses/credentials.service';
+import { ToasterNotificationService } from "../../../toaster-notification.service";
+import { Router } from '@angular/router';
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { SnackbarService } from 'src/app/snackbar.service';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +16,22 @@ export class LoginComponent implements OnInit {
   verifiedemail: boolean;
   emailError: any;
   phoneError: any;
+  @Input() name: string | undefined;
 
   constructor(
     private formBuilder: FormBuilder,
+    public snackBar: MatSnackBar,
+    private snackbarService: SnackbarService,
     private cd: CredentialsService,
-    private SpinnerService: NgxSpinnerService,) {
+    private SpinnerService: NgxSpinnerService,
+    public toaster: ToasterNotificationService,
+    public router: Router) {
     this.submitted = false;
     this.verifiedemail = true;
   }
+
+  constoptions= { positionClass:'toast-custom' };
+
   get f() { return this.loginForm.controls; }
   submitted: boolean;
   isSignedIn = false;
@@ -47,8 +59,12 @@ export class LoginComponent implements OnInit {
         console.log(resp);
         if (resp.status === 200) {
           const s = resp.data?.token;
+          console.log(resp.data?.token , "token");
+          
           localStorage.setItem('token', s);
+          this.router.navigate(['dashboard']);
         }
+        this.router.navigate(['dashboard' ]);
         if (resp.status === 404) {
           if (resp.error === 'required-fields') {
           }
@@ -59,11 +75,25 @@ export class LoginComponent implements OnInit {
       this.SpinnerService.hide();
 
       if (err.code === 'auth/user-not-found') {
-        this.emailError = 'Email Already exists';
+
+        this.snackbarService.openSnackBar('Email not found !!');
+        
+        // this.toaster.showError("Email not found !!", "", );
+        // this.emailError = 'Email Already exists';
       }
       if (err.code === 'auth/wrong-password') {
-        this.phoneError = 'Password Invalid';
+        // this.toaster.showError("Password Invalid !!", "");
+        this.snackbarService.openSnackBar('Password Invalid !!');
+        // this.phoneError = 'Password Invalid';
       }
+
+
+      if (err.code === 'auth/too-many-requests') {
+        // this.toaster.showError("Password Invalid !!", "");
+        this.snackbarService.openSnackBar('Too-many-requests !!');
+        // this.phoneError = 'Password Invalid';
+      }
+
     });
 
   }

@@ -26,131 +26,14 @@
         --tw-bg-opacity: 1;
         background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
         position: relative;
-        min-height: 717px;
+        min-height: 740px;
         padding-left: 2.5rem;
         padding-right: 2.5rem;
     }
     .login:before {
         content: "";
         margin-left: -48%;
-        background-image: url(../../assets/bg-login-page.svg);
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-}
-
-mat-grid-tile {
-    background: transparent;
-}
-
-.mat-form-field {
-    width: 27vw;
-    margin-right: 94px;
-    margin-bottom: 1vh;
-}
-
-.script-menu>::ng-deep .mat-figure {
-    justify-content: flex-start;
-}
-
-.signup-title {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 36px;
-    color: rgb(45, 55, 72);
-}
-
-::ng-deep .mat-form-field-wrapper {
-    position: relative;
-    margin: 0 !important;
-    margin-bottom: -1.25em;
-}
-
-.script-menu1>::ng-deep .mat-figure {
-    justify-content: right;
-    margin: 0 0 0 6vw;
-}
-
-.example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-}
-
-.sub-tile {
-    color: rgb(255, 255, 255);
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 36px;
-    margin-top: 40px;
-    line-height: 45px;
-}
-
-.sub-tile1 {
-    color: rgb(255, 255, 255);
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 18px;
-    margin-top: 20px;
-    line-height: 28px;
-}
-
-.titel-forget {
-    text-align: end;
-    margin: 0;
-}
-
-.mat-button-width {
-    width: 48% !important;
-}
-
-.example-button-row {
-    justify-content: space-between;
-    display: flex;
-}
-
-.gap {
-    margin-top: 10px;
-}
-
-.abc {
-    margin: auto;
-    display: block;
-    text-align: center;
-}
-
-.btn {
-    margin-top: 3vh;
-}
-
-.body {
-    -webkit-font-smoothing: antialiased;
-    font-family: Roboto;
-    font-size: .875rem;
-    line-height: 1.25rem;
-    overflow-x: hidden;
-    padding: .75rem 2rem;
-    --tw-text-opacity: 1;
-    color: rgba(45, 55, 72, var(--tw-text-opacity));
-    background-color: #3160D8 !important;
-    .login {
-        --tw-bg-opacity: 1;
-        background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-        position: relative;
-        min-height: 740px;
-        // padding-left: 2.5rem;
-        // padding-right: 2.5rem;
-    }
-    .login:before {
-        content: "";
-        margin-left: -48%;
-        background-image: url(../../assets/bg-login-page.svg);
+        background-image: url('../../../../assets/bg-login-page.svg');
         background-repeat: no-repeat;
         background-size: auto 100%;
         background-position: 100%;
@@ -262,9 +145,6 @@ form {
 }
 
 @media screen and (min-width: 600px) and (max-width: 1200px) {
-    .animation {
-        display: none;
-    }
     .login {
         min-height: 574px !important;
         justify-content: center !important;
@@ -298,11 +178,10 @@ form {
     }
     .login {
         min-height: 619px;
-        // padding-left: 1.4rem;
-        // padding-right: 1.4rem;
+        padding-left: 1.4rem !important;
+        padding-right: 1.4rem !important;
         align-items: center;
         display: flex;
-        justify-content: center;
     }
     .small1 {
         background-color: white;
@@ -327,48 +206,4 @@ form {
         width: 100%;
         margin-top: 2vh;
     }
-}
-
-.abc {
-    position: relative;
-    span {
-        // position: absolute;
-        // left: 0%;
-        // margin-bottom: 8px;
-        // bottom: 0;
-        // margin-top: 21px;
-        // font-size: 11px;
-        // width: 100%;
-        // text-align: left;
-        position: absolute;
-        left: 2.3%;
-        margin-bottom: 8px;
-        bottom: 0;
-        margin-top: 21px;
-        font-size: 11px;
-        width: 100%;
-        text-align: left;
-        top: 33px;
-    }
-    .xyz {
-        position: absolute;
-        left: 66%;
-        margin-bottom: 8px;
-        bottom: 0;
-        margin-top: 21px;
-        font-size: 11px;
-        width: 100%;
-        text-align: left;
-    }
-}
-
-.ngx-spinner-overlay {
-    background-color: rgba(51, 51, 51, 0.8) !important;
-    z-index: 99999 !important;
-    position: fixed !important;
-    opacity: 1 !important;
-    width: 6vw !important;
-    height: 6vh !important;
-    position: absolute !important;
-    border-radius: 4px !important;
 }

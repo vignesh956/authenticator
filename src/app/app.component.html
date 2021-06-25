@@ -1,48 +1,77 @@
-<div class="body" *ngIf="false">
+<div class="body">
+
     <div class="sub-divider">
         <div class="menu-space">
             <div class="sidebar-heading">
                 <span style="color: white;">
-          eTOP
-        </span>
+                    eTOP
+                </span>
                 <span class="font-medium" style="color: white;">signDOC</span>
+
+                <ng-sidebar-container class="closed">
+                    <ng-sidebar [opened]="opened">
+                        <!-- <a (click)="togglesidebar()"><i class="fas fa-bars"></i></a> -->
+                        <ul class="list" style="list-style-type:none;">
+                            <li>
+                                <a class="out" (click)="togglesidebar()" [routerLink]="['dashboard']" routerLinkActive="active"> <i class="fas fa-home "></i>dashboard</a>
+                            </li>
+                            <li><a class="out" (click)="togglesidebar()" [routerLink]="['home']" routerLinkActive="active"><i class="fas fa-home "></i>Home</a></li>
+                            <li>
+                                <a class="out" (click)="togglesidebar()" [routerLink]="['create-document']" routerLinkActive="active"> <i class="fas fa-folder-plus"></i>create Document</a>
+                            </li>
+                            <li><a class="out" (click)="togglesidebar()" [routerLink]="['report']" routerLinkActive="active"><i class="fas fa-bug"></i>Reports</a></li>
+                            <li><a class="out" (click)="togglesidebar()" [routerLink]="['setting']" routerLinkActive="active"><i class="fas fa-cog"></i>Settings</a></li>
+
+                        </ul>
+                    </ng-sidebar>
+                    <div ng-sidebar-content>
+                        <a (click)="togglesidebar()" class="menu"><i class="fas fa-bars"></i></a>
+                    </div>
+                </ng-sidebar-container>
+
             </div>
 
             <div class="list-group ">
+
                 <ul class="filed-list">
                     <li>
-                        <a [routerLink]="['dashboard']" routerLinkActive="active">
-                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i> <span>Dashboard</span> </a>
+                        <p [routerLink]="['dashboard']" routerLinkActive="active">
+                            <i class="fas fa-home " style="padding: 0 15px 0 0; margin: 0px 0 0 43px;"></i> <span class="names">Dashboard</span>
+                        </p>
                     </li>
 
-                    <li style="    margin-top: 17px;">
+
+                    <li>
                         <a [routerLink]="['create-document']" routerLinkActive="active">
-                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i><span>
+                            <i class="fas fa-folder-plus"></i><span class="names">
                                 Create Document
                             </span> </a>
                     </li>
-                    <li style="    margin-top: 17px;">
+                    <li>
 
                         <a [routerLink]="['home']" routerLinkActive="active">
-                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i><span>
+                            <i class="fas fa-home "></i><span class="names">
                                 home
                             </span> </a>
 
+                        <div>
+                        </div>
                     </li>
-                    <li style="    margin-top: 17px;">
+                    <li>
 
                         <a [routerLink]="['report']" routerLinkActive="active">
-                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i><span>
+                            <i class="fas fa-bug"></i><span class="names">
                                 Reports
                             </span> </a>
 
                     </li>
-                    <li style="    margin-top: 17px;">
+                    <li>
 
                         <a [routerLink]="['setting']" routerLinkActive="active">
-                            <i class="fas fa-home " style="padding: 0 15px 0 0;"></i><span>
+                            <i class="fas fa-cog"></i><span class="names">
                                 Settings
-                            </span> </a>
+                            </span>
+                        </a>
 
                     </li>
                 </ul>
@@ -61,5 +90,5 @@
 </div>
 
 
-<router-outlet>
-</router-outlet>
+<!-- <router-outlet>
+</router-outlet> -->

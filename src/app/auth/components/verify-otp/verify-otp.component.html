@@ -1,0 +1,50 @@
+<!-- <div *ngIf="stepTwo">
+    <h1 class="signup-title ">
+        verify Your OTP <br>
+        <p style="font-size: 12px; margin: 0;" class="">
+            OTP Sent to Your Email Id {{userData}}
+        </p>
+    </h1>
+
+    <form [formGroup]="verify" (ngModelChange)="otpNumber()">
+
+
+        <mat-form-field appearance="outline" class="example-full-width ">
+            <mat-label>OTP number </mat-label>
+            <input matInput formControlName="number" type="number" placeholder="enter your number " required ngModel>
+            <mat-error *ngIf="f.number && f.number.errors && (f.number.dirty || f.number.touched || submitted)">
+                <span *ngIf="  f.number.errors.required">
+                    OTP is required.
+                </span>
+                <span *ngIf=" f.number.errors.maxlength">
+                    Please enter 4 digit
+                </span>
+            </mat-error>
+
+        </mat-form-field>
+        <span style="color: red;" *ngif="otpverify">{{otpverify}}</span>
+
+
+
+        <section>
+            <div class="example-button-row ">
+                <button mat-flat-button color="primary" class="mat-button-width" (click)="verifyotp(verify)">Verify
+
+                    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise"
+                        [fullScreen]="false">
+
+                    </ngx-spinner>
+                </button>
+                <button mat-flat-button color="primary" class="mat-button-width" (click)="resendOtp()">Resend
+                    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise"
+                        [fullScreen]="false">
+
+                    </ngx-spinner>
+                </button>
+            </div>
+        </section>
+    </form>
+</div>
+<div class="abc" *ngIf="stepthree">
+    <h2>successfully verified your email go to login page</h2>
+</div> -->

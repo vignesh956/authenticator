@@ -5,13 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
-import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material/material.module';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { NgxSpinnerModule } from "ngx-spinner";  
+import { SidebarModule } from 'ng-sidebar';
+
+import { NgxSpinnerModule } from "ngx-spinner";
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -25,14 +24,14 @@ import { HomeComponent } from './home/home.component';
 import { CreateDocumentComponent } from './create-document/create-document.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ToastrModule } from 'ngx-toastr';
+import { AuthModule } from '../app/auth/auth.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
-    LoginComponent,
-    ForgotPasswordComponent,
     DashbordComponent,
     MenuComponent,
     HomeComponent,
@@ -41,11 +40,18 @@ import { SettingsComponent } from './settings/settings.component';
     SettingsComponent,
 
   ],
-  imports: [
+    imports: [
     BrowserModule,
     MaterialModule,
     FormsModule,
+    AuthModule,
     ReactiveFormsModule,
+    SidebarModule,
+    ToastrModule.forRoot({
+      timeOut: 3500,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    }),
     HttpClientModule,
     NgxSpinnerModule  ,
     AppRoutingModule,
