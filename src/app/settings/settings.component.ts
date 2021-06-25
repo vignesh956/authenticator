@@ -6,12 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
+  changePassword: boolean = true;
+  signature: boolean = false;
+  logout: boolean = false;
+  stampUpload: boolean = false;
 
- 
+  constructor() {
 
-constructor() { }
+  }
 
-ngOnInit(): void {
-}
+
+  selectedHero?: any;
+
+  ngOnInit(): void {
+  }
+  onSelect(hero: any): void {
+    this.selectedHero = hero;
+  }
 
 }

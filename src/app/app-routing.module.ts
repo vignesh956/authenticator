@@ -5,6 +5,7 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { ReportsComponent } from './reports/reports.component';
+import { ChangePasswordComponent } from './settings-info/change-password/change-password.component';
 import { SettingsComponent } from './settings/settings.component';
 // import {AuthenticationGuard } from '../app/guards/authentication.guard'; 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'setting' , component: SettingsComponent},
   {path: 'menu' , component: MenuComponent},
   {path: 'create-document' , component: CreateDocumentComponent},
+  {path: 'change' , component: ChangePasswordComponent},
   // {path: '' ,  redirectTo:'signup', pathMatch: 'full'},
   // { path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];

@@ -26,6 +26,10 @@ import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthModule } from '../app/auth/auth.module';
+import { ChangePasswordComponent } from './settings-info/change-password/change-password.component';
+import { UploadSignatureComponent } from './settings-info/upload-signature/upload-signature.component';
+import { UploadStampComponent } from './settings-info/upload-stamp/upload-stamp.component';
+import { LogoutComponent } from './settings-info/logout/logout.component';
 
 
 
@@ -38,6 +42,10 @@ import { AuthModule } from '../app/auth/auth.module';
     CreateDocumentComponent,
     ReportsComponent,
     SettingsComponent,
+    ChangePasswordComponent,
+    UploadSignatureComponent,
+    UploadStampComponent,
+    LogoutComponent,
 
   ],
     imports: [

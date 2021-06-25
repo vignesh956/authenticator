@@ -10,3 +10,21 @@
     font-family: ui-monospace;
     font-weight: 500;
 }
+
+li {
+    box-sizing: border-box;
+    list-style: none;
+    font-size: 21px;
+    padding: 2vh 0vw;
+    font-weight: 500;
+    font-family: serif;
+}
+
+li:hover {
+    background-color: rgb(230, 217, 217);
+}
+
+.listof {
+    text-align: center;
+    padding: 6vh 6vw;
+}
