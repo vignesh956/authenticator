@@ -22,6 +22,7 @@ outbox: boolean = false;
 achive: boolean = false;
 trash: boolean = false;
 
+mymodal:any
 
 
 title = 'appBootstrap';
@@ -30,9 +31,12 @@ closeResult: string | undefined;
 
 constructor(private modalService: NgbModal) { }
 open(content: any) {
+  console.log(content , "content");
+  
   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    console.log(result , "result")
     this.closeResult = `Closed with: ${result}`;
-  }, (reason) => {
+  }, (reason : any) => {
     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
   });
 }
