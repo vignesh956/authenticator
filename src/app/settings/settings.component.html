@@ -1,41 +1,32 @@
 <div>
-    <div class="row">
-        <div class="col-4 avatar-col">
-            <div>
-                <img src="../../assets/live-person-icon.png" style="border-radius: 150px;">
-            </div>
-        </div>
-        <div class="col-8" style="padding: 7vh 0 3vh;">
-            <div class="info-space">
-                <p>T. Vignesh Reddy</p>
-                <p>tulasigarivignesh1999@gmail.com</p>
-                <p>+917396989281</p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
+    <div class="row firstrow" style="    padding-top: 6vh;">
+        <div class="col-4  col-sm-12 col-md-5 col-lg-4 col-xl-4 col-xs-12">
             <div class="listof">
                 <!-- <img src="../../assets/play.png"> -->
-                <div>
+                <div class="list-back">
                     <ul>
-                        <li (click)="changePassword = true; signature = false; logout = false ; stampUpload = false;  ">
+                        <li (click)="changePassword = false ; signature = false ; logout = false ; stampUpload = false; profile = true;">
+                            <a>Profile</a>
+                        </li>
+                        <li (click)="changePassword = true; signature = false; logout = false ; stampUpload = false; profile = false;  ">
                             <a>Change Password</a>
                         </li>
-                        <li (click)="changePassword = false ; signature = true ; logout = false ; stampUpload = false;">
+                        <li (click)="changePassword = false ; signature = true ; logout = false ; stampUpload = false; profile = false;">
                             <a>Upload Signature</a>
                         </li>
-                        <li (click)="changePassword = false ; signature = false ; logout = false ; stampUpload = true;">
+                        <li (click)="changePassword = false ; signature = false ; logout = false ; stampUpload = true; profile = false;">
                             <a>Upload Stamp</a>
                         </li>
-                        <li (click)="changePassword = false ; signature = false ; logout = true ; stampUpload = false;">
+                        <li (click)="changePassword = false ; signature = false ; logout = true ; stampUpload = false; profile = false;">
                             <a>Logout</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-8 col-sm-12 col-md-7 col-lg-8 col-xl-8 col-xs-12">
+            <app-profile *ngIf="profile"></app-profile>
             <app-change-password *ngIf="changePassword"> </app-change-password>
             <app-upload-signature *ngIf="signature"></app-upload-signature>
             <app-logout *ngIf="logout"></app-logout>
@@ -44,4 +35,36 @@
     </div>
 
 
+    <div class="row second-row" style="    padding-top: 6vh;">
+        <div>
+            <div class="scrollmenu">
+                <ul style="display: flex;">
+                    <li (click)="changePassword = false ; signature = false ; logout = false ; stampUpload = false; profile = true;">
+                        <a>Profile</a>
+                    </li>
+                    <li (click)="changePassword = true; signature = false; logout = false ; stampUpload = false; profile = false;  ">
+                        <a>Change Password</a>
+                    </li>
+                    <li (click)="changePassword = false ; signature = true ; logout = false ; stampUpload = false; profile = false;">
+                        <a>Upload Signature</a>
+                    </li>
+                    <li (click)="changePassword = false ; signature = false ; logout = false ; stampUpload = true; profile = false;">
+                        <a>Upload Stamp</a>
+                    </li>
+                    <li (click)="changePassword = false ; signature = false ; logout = true ; stampUpload = false; profile = false;">
+                        <a>Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class=" col-sm-12 col-md-7 col-lg-8 col-xl-8 col-xs-12">
+            <app-profile *ngIf="profile"></app-profile>
+            <app-change-password *ngIf="changePassword"> </app-change-password>
+            <app-upload-signature *ngIf="signature"></app-upload-signature>
+            <app-logout *ngIf="logout"></app-logout>
+            <app-upload-stamp *ngIf="stampUpload"></app-upload-stamp>
+        </div>
+    </div>
 </div>

@@ -1,16 +1,3 @@
-.avatar-col {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding: 3vh 0;
-}
-
-.info-space {
-    font-size: 18px;
-    font-family: ui-monospace;
-    font-weight: 500;
-}
-
 li {
     box-sizing: border-box;
     list-style: none;
@@ -22,9 +9,113 @@ li {
 
 li:hover {
     background-color: rgb(230, 217, 217);
+    border-radius: 15px;
+    color: black;
+    border-color: black;
 }
 
 .listof {
     text-align: center;
-    padding: 6vh 6vw;
+    display: flex;
+    justify-content: center;
+}
+
+.list-back {
+    background-color: rgb(28, 63, 170);
+    width: 18vw;
+    height: 68vh;
+    border-bottom-color: rgb(226, 232, 240);
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 32px;
+}
+
+ol,
+ul {
+    padding-left: 0rem;
+    width: 93%;
+    color: white;
+}
+
+.scrollmenu {
+    background-color: #1c3faa;
+    overflow: auto;
+    white-space: nowrap;
+    border-radius: 9px;
+}
+
+.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.scrollmenu a:hover {
+    background-color: rgb(230, 217, 217);
+    color: black;
+    border-color: black;
+}
+
+.second-row {
+    display: none !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .list-back {
+        width: 28vw;
+    }
+}
+
+@media screen and (min-width: 50px) and (max-width: 768px) {
+    .second-row {
+        display: block !important;
+    }
+    .firstrow {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .list-back {
+        width: 22vw;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    ol,
+    ul {
+        padding-left: revert;
+        width: auto;
+    }
+    li {
+        font-size: 15px;
+    }
+    dl,
+    ol,
+    ul {
+        margin-top: revert;
+        margin-bottom: revert;
+    }
+}
+
+@media screen and (min-width: 50px) and (max-width: 576px) {
+    ol,
+    ul {
+        padding-left: revert;
+        width: auto;
+    }
+    li {
+        font-size: 16px;
+        padding: 0;
+    }
+    dl,
+    ol,
+    ul {
+        margin-top: 0;
+        margin-bottom: auto;
+    }
 }

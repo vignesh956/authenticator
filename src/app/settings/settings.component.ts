@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-  changePassword: boolean = true;
+  changePassword: boolean = false;
   signature: boolean = false;
   logout: boolean = false;
   stampUpload: boolean = false;
+  profile : boolean = false;
 
   constructor() {
 
