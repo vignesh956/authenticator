@@ -1,0 +1,37 @@
+.info-space {
+    font-size: 18px;
+    font-family: ui-monospace;
+    font-weight: 500;
+}
+
+.profile-body {
+    padding: 3vh 0 0 0;
+}
+
+.logout {
+    font-size: 17px;
+    font-weight: 700;
+    font-family: initial;
+}
+
+.profile-info {
+    padding-left: 8vw;
+    width: 95%;
+    background-color: #fff;
+    padding: 5vh 0vw;
+    box-shadow: 0 3px 20px rgb(0 0 0 / 23%);
+    text-align: center;
+    border-radius: 30px;
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .profile-body {
+        padding: 3vh 0 0 3vw;
+    }
+}
+
+@media screen and (min-width: 50px) and (max-width: 576px) {
+    .profile-body {
+        padding: 3vh 0 0 5vw;
+    }
+}

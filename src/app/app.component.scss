@@ -16,12 +16,13 @@
         padding: 5vh 0;
     }
     .main-content {
-        background-color: #f1f5f8;
-        width: 78%;
+        // background-color: #f1f5f8;
+        background-color: rgb(244 246 249);
+        width: 80%;
         border-radius: 26px;
         position: absolute;
         // height: auto;
-        // height: 600px;
+        height: 600px;
         padding-bottom: 3vh;
     }
 }
@@ -137,10 +138,12 @@ mat-sidenav {
         min-height: 918px;
         width: 100%;
         .main-content {
-            height: auto;
+            // height: auto;
+            // padding-bottom: 3vh;
+            // width: 77%;
+            height: 600px;
             padding-bottom: 3vh;
-            width: 77%;
-            ;
+            width: 73.8%;
         }
     }
     .filed-list {

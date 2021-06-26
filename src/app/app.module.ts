@@ -35,7 +35,7 @@ import { OutboxComponent } from './manage-section/outbox/outbox.component';
 import { TrashComponent } from './manage-section/trash/trash.component';
 import { AchiveComponent } from './manage-section/achive/achive.component';
 import { DraftComponent } from './manage-section/draft/draft.component';
-// import {NgbModal,ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { ProfileComponent } from './settings-info/profile/profile.component';
 
 
 
@@ -57,6 +57,7 @@ import { DraftComponent } from './manage-section/draft/draft.component';
     TrashComponent,
     AchiveComponent,
     DraftComponent,
+    ProfileComponent,
 
   ],
     imports: [
