@@ -17,11 +17,11 @@
     }
     .main-content {
         background-color: #f1f5f8;
-        width: 80%;
+        width: 78%;
         border-radius: 26px;
         position: absolute;
         // height: auto;
-        height: 600px;
+        // height: 600px;
         padding-bottom: 3vh;
     }
 }
@@ -164,9 +164,7 @@ mat-sidenav {
     // li {
     //     text-align: center;
     // }
-    .sub-divider {
-        // display: block;
-    }
+ 
     .menu-space {
         width: 100%;
     }
@@ -210,40 +208,74 @@ mat-sidenav {
 }
 
 @media screen and (min-width: 992px) and (max-width: 2400px) {
+    .icon-mat{
+        display: none;
+    }
     .menu {
         display: none;
     }
     .closed {
         display: none !important;
     }
+    .mat-elevation-z8{
+        display: none;
+    }
+    .mat-nav{
+        display: none;
+    }
 }
-
-ng-sidebar-container {
-    height: 100vh;
-    z-index: 1091;
-}
-
-::ng-deep .ng-sidebar {
-    background-color: #f4f4f4;
-    width: 300px;
-    padding: 2em 3em;
-    box-shadow: 0 0 2.5rem rgba(85, 85, 85, 0.5);
-}
-
 .list {
     margin-top: 2em;
     display: black;
     color: red;
     padding: 0px;
+    
 }
-
-.list li {
-    margin-bottom: 15px;
-    color: red;
-}
-
 .out {
     // justify-content: center;
     width: 100%;
     color: black !important;
+}
+.off-group{
+    padding: 4vh 0;
+color: black !important;
+}
+.mat-elevation{
+    z-index: 200000 !important;
+}
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+
+    mat-icon {
+        margin-right: 8px;
+    }
+}
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+mat-toolbar {
+    // background: #004a9f;
+    color: white;
+}
+mat-sidenav {
+    // margin: 16px;
+    width: 200px;
+    border-right: none;
+    // background: #002b5c;
+    color: white;
+    border-radius: 10px;
+    // padding: 16px;
+    text-align: center;
+    margin: 5rem 0 0 -1rem;
+}
+@media screen and (min-width: 576px) and (max-width: 2400px) {
+    .icon-mat{
+        display: none;
+    }
 }
