@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, Input, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { SnackbarService } from './snackbar.service';
 
@@ -8,20 +10,25 @@ import { SnackbarService } from './snackbar.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'project';
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
+   title = 'project';
   opened = false;
 
-  constructor(
-    public snackBar: MatSnackBar,
-    private snackbarService: SnackbarService,
-  ) {}
-
-  @Input() name: string | undefined;
-
-  openSnackBar() {
-      this.snackbarService.openSnackBar('Test!!');
-  }
   togglesidebar(){
     this.opened=!this.opened;
+  }
+  constructor(private observer: BreakpointObserver) {}
+
+  ngAfterViewInit() {
+    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
+      if (res.matches) {
+        this.sidenav.mode = 'over';
+        this.sidenav.close();
+      } else {
+        this.sidenav.mode = 'side';
+        this.sidenav.open();
+      }
+    });
   }
 }

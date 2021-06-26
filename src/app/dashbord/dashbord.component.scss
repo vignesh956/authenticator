@@ -1,0 +1,108 @@
+.card {
+  box-shadow: 0 3px 20px rgb(0 0 0 / 4%);
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: .375rem;
+  position: relative;
+  // height: 67vh;
+  --tw-bg-opacity: 1;
+  background-color: rgba(28, 63, 170, var(--tw-bg-opacity));
+}
+
+a {
+  color: #fff !important;
+
+
+}
+
+a:hover {
+  font-weight: 500;
+}
+
+.gmail-list {
+  color: #fff !important;
+  margin-bottom: 0.8rem;
+  padding: .5rem 1.75rem;
+  border-radius: .375rem;
+}
+
+.gmail-list:hover {
+  background-color: rgba(57, 94, 193, var(--tw-bg-opacity));
+
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.mr-2 {
+  margin-right: .5rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.color-card {
+  padding-top: 1.25rem;
+  margin-top: -1.15rem;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  // display: flex;
+
+}
+
+.text-color {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  align-items: center;
+  display: flex;
+  padding: .5rem 1.75rem;
+
+}
+
+.Required {
+  width: .5rem;
+  margin-right: .75rem;
+  height: .5rem;
+  border-radius: 9999px;
+
+  --tw-bg-opacity: 1;
+  background-color: rgba(247, 139, 0, var(--tw-bg-opacity));
+
+}
+.new{
+    padding: .5rem 1.75rem;
+    color: #fff;
+}
+.total-box{
+  margin-top: 7rem;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  
+    .gmail-list{
+        padding-left: 4vw;
+    }
+  
+}
+@media screen and (min-width: 993px) and (max-width: 1600px) {
+.side-list{
+  display: none;
+}
+}
+
+@media screen and (min-width: 50px) and (max-width: 992px) {
+  .card{
+    display: none !important;
+  }
+  .total-box{
+    margin: 0;
+  }
+
+}
+
+

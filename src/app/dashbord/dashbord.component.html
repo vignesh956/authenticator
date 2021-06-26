@@ -1,8 +1,161 @@
 <div>
-    <div class="row">
-        <div class="col-5"> one </div>
-        <div class="col-7">
-            <app-inbox></app-inbox>
-        </div>
+
+  <div class="row">
+
+    <!-- <1></1> -->
+    <div class="col-sm-12  col-xs-12 col-lg-4 col-md-2 col-xl-3 first-col" style="margin-top: 4rem;">
+      <div class="side-list">
+      <h2 (click)="open(mymodal)" >menu</h2>
     </div>
+
+
+      <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">
+  
+      </button> -->
+      <!-- <1></1> -->
+      <ng-template #mymodal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body"
+          (click)="inbox=true; draft=false; outbox=false; trash=false; achive=false;  modal.close('Save click')">
+
+          <a style="color: rgb(46, 45, 45) !important;"> <i class="fas fa-envelope-open"></i> 
+            <span style="padding-left: 1rem;">inbox</span></a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body"
+          (click)="inbox=false; draft=true; outbox=false; trash=false; achive=false;  modal.close('Save click')">
+
+          <a style="color: rgb(46, 45, 45) !important;"> <i class="fas fa-inbox"></i>
+            <span style="padding-left: 1rem;"> draft</span> </a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body"
+          (click)="inbox=false; draft=false; outbox=true; trash=false; achive=false;  modal.close('Save click')">
+
+          <a style="color: rgb(46, 45, 45) !important;"> <i class="fas fa-inbox"></i>
+            <span style="padding-left: 1rem;">outbox</span> </a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body"
+          (click)="inbox=false; draft=false; outbox=false; trash=false; achive=true;  modal.close('Save click')">
+
+          <a style="color: rgb(46, 45, 45) !important;"> <i class="fas fa-inbox"></i>
+            <span style="padding-left: 1rem;">achive</span> </a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body"
+          (click)="inbox=false; draft=false; outbox=false; trash=true; achive=false;  modal.close('Save click')">
+
+          <a style="color: rgb(46, 45, 45) !important;"> <i class="fas fa-trash"></i>
+            <span style="padding-left: 1rem;"> Trash</span> </a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body">
+          <a style="color: black !important;">
+            <i class="fas fa-exclamation-circle"></i> 
+             <span style="padding-left: 1rem;">Action Required</span> 
+          </a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body">
+          <a style="color: black !important;">
+            <i class="fas fa-clock"></i>
+            <span style="padding-left: 1rem;">Waiting for Others</span> 
+          </a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body">
+          <a style="color: black !important;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span style="padding-left: 1rem;">Expiring Soon</span> 
+          </a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body">
+          <a style="color: black !important;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span style="padding-left: 1rem;"> Authentication Failed</span>
+          </a>
+        </div>
+        <hr style="margin: 0;">
+        <div class="modal-body">
+          <a style="color: black !important;"><i class="fas fa-plus"></i><span style="padding-left: 1rem;">New</span></a>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        </div>
+
+
+      </ng-template>
+
+
+      <div class="card">
+        <hr style="margin: 0;">
+
+
+        <!-- <1 colum data> -->
+        <a (click)="inbox=true; draft=false; outbox=false; trash=false; achive=false;" class="gmail-list ">
+
+          <i class="fas fa-inbox"></i> <span style="padding-left: 1rem;">Inbox</span> </a>
+
+        <a (click)="inbox=false; draft=true; outbox=false; trash=false; achive=false;" class="gmail-list">
+          <i class="fas fa-inbox"></i> <span style="padding-left: 1rem;">Draft</span>
+        </a>
+
+        <a (click)="inbox=false; draft=false; outbox=true; trash=false; achive=false;" class="gmail-list">
+
+          <i class="fas fa-inbox"></i> <span style="padding-left: 1rem;">outbox</span> </a>
+
+
+        <a (click)="inbox=false; draft=false; outbox=false; trash=false; achive=true; " class="gmail-list">
+          <i class="fas fa-inbox"></i> <span style="padding-left: 1rem;">achive</span> </a>
+
+
+        <a (click)="inbox=false; draft=false; outbox=false; trash=true; achive=false;" class="gmail-list">
+          <i class="fas fa-trash"></i><span style="    padding-left: 1rem;">Trash</span> </a>
+
+
+
+        <div class="color-card">
+          <hr>
+          <a class=" text-color ">
+            <div class=" Required  "></div> Action Required
+          </a>
+
+          <a class="text-color">
+            <div class="Required"> </div> Waiting for Others
+          </a>
+          <a class="text-color">
+            <div class="Required"> </div> Expiring Soon
+          </a>
+          <a class="text-color">
+            <div class="Required"> </div> Authentication Failed
+          </a>
+          <a class="gmail-list"> <i class="fas fa-plus"></i> <span style="padding-left: 1rem;">New</span> </a>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- <second colum></second> -->
+    <div class=" total-box col-sm-12  col-xs-12 col-lg-8 col-md-12 col-xl-9 second-col">
+
+
+      <app-inbox *ngIf="inbox"> </app-inbox>
+      <app-draft *ngIf="draft"></app-draft>
+      <app-outbox *ngIf="outbox"></app-outbox>
+      <app-achive *ngIf="achive"></app-achive>
+      <app-trash *ngIf="trash"></app-trash>
+
+    </div>
+  </div>
 </div>
