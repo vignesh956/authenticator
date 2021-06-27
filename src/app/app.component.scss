@@ -4,7 +4,7 @@
     font-size: .875rem;
     line-height: 1.25rem;
     overflow-x: hidden;
-    padding: 1.45rem 1.2rem;
+    padding: 1.45rem 3.2rem;
     --tw-text-opacity: 1;
     color: rgba(45, 55, 72, var(--tw-text-opacity));
     background-color: #3160D8 !important;
@@ -21,8 +21,8 @@
         width: 80%;
         border-radius: 26px;
         position: absolute;
-        // height: auto;
-        height: 600px;
+        height: auto;
+        // height: 600px;
         padding-bottom: 3vh;
     }
 }
