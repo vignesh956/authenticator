@@ -32,3 +32,9 @@
         margin-left: 1.7vw;
     }
 }
+
+@media screen and (min-width: 768px) and (max-width: 5000px) {
+    .arrow {
+        display: none;
+    }
+}

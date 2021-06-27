@@ -16,7 +16,7 @@ export class AppComponent {
   opened = false;
 
   togglesidebar(){
-    this.opened=!this.opened;
+    
   }
   constructor(private observer: BreakpointObserver) {}
 

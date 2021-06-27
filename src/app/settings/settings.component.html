@@ -67,4 +67,53 @@
             <app-upload-stamp *ngIf="stampUpload"></app-upload-stamp>
         </div>
     </div>
+
+
+    <div class="row second-row" style="    padding-top: 6vh;">
+        <div>
+            <div class="settings-list">
+                <ul style="color: black;">
+                    <li [routerLink]="['/profile']" routerLinkActive="active">
+                        <div class="arrow-symbol1">
+                            <i class="fas fa-arrow-right"></i>
+
+                            <a>Profile</a>
+                        </div>
+                    </li>
+                    <li [routerLink]="['/change-password']" routerLinkActive="active">
+                        <div class="arrow-symbol2">
+                            <i class="fas fa-arrow-right"></i>
+
+                            <a>Change Password</a>
+                        </div>
+
+                    </li>
+                    <li [routerLink]="['/upload-signature']" routerLinkActive="active">
+                        <div class="arrow-symbol3">
+                            <i class="fas fa-arrow-right"></i>
+
+                            <a>Upload Signature</a>
+                        </div>
+
+
+                    </li>
+                    <li [routerLink]="['/upload-stamp']" routerLinkActive="active">
+                        <div class="arrow-symbol4">
+                            <i class="fas fa-arrow-right"></i>
+
+                            <a>Upload Stamp</a>
+
+                        </div>
+
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
 </div>

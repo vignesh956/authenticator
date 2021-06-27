@@ -36,6 +36,8 @@ import { TrashComponent } from './manage-section/trash/trash.component';
 import { AchiveComponent } from './manage-section/achive/achive.component';
 import { DraftComponent } from './manage-section/draft/draft.component';
 import { ProfileComponent } from './settings-info/profile/profile.component';
+import { SettingsModule } from './settings/settings.module';
+import { BackButtonComponent } from './settings-info/back-button/back-button.component';
 
 
 
@@ -58,6 +60,7 @@ import { ProfileComponent } from './settings-info/profile/profile.component';
     AchiveComponent,
     DraftComponent,
     ProfileComponent,
+    BackButtonComponent,
 
   ],
     imports: [
@@ -65,6 +68,7 @@ import { ProfileComponent } from './settings-info/profile/profile.component';
     MaterialModule,
     FormsModule,
     AuthModule,
+    SettingsModule,
     ReactiveFormsModule,
     SidebarModule,
     ToastrModule.forRoot({
