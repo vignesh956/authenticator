@@ -8,8 +8,23 @@
 
     <div class="row">
         <div class="upload-space">
+            <div class="row">
+                <div class="col-12">
+                    <input type="file" (change)="onfileselet($event)">
 
-            <input type="file">
+                    <ng-container *ngIf="isImageSaved; ">
+                        <img [src]="cardImageBase64" style="    height: 17vh;
+                width: 10vw;" />
+                    </ng-container>
+                </div>
+                <div class="col-12">
+                    <button mat-button color="primary" (click)="onupload()">upload</button>
+
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 </div>
