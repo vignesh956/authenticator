@@ -10,7 +10,7 @@ export class SettingsComponent implements OnInit {
   signature: boolean = false;
   logout: boolean = false;
   stampUpload: boolean = false;
-  profile : boolean = false;
+  profile : boolean = true;
 
   constructor() {
 

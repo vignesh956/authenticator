@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { CredentialsService } from 'src/app/auth/servieses/credentials.service';
+import { SettingPagesService } from '../setting-pages.service';
 
 @Component({
   selector: 'app-profile',
@@ -24,11 +24,11 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private cre: CredentialsService) { }
+    private settingpage: SettingPagesService) { }
 
 
   ngOnInit(): void {
-    this.users = this.cre.profileDate();
+    this.users = this.settingpage.profileDate();
     console.log(this.users);
   }
 

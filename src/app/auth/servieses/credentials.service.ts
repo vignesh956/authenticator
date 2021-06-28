@@ -75,14 +75,6 @@ export class CredentialsService {
 
 
 
-  profileDate() {
-    return {
-      name: 'T.vignesh',
-        phone: +917396989281,
-        profile:'../../assets/live-person-icon.png',
-        email : 'tulasigarivignesh1999@gmail.com'
-    };
-
-  }
+ 
 }
 
