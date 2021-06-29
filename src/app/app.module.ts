@@ -38,6 +38,8 @@ import { DraftComponent } from './manage-section/draft/draft.component';
 import { ProfileComponent } from './settings-info/profile/profile.component';
 import { SettingsModule } from './settings/settings.module';
 import { BackButtonComponent } from './settings-info/back-button/back-button.component';
+import { EmailComponent } from './manage-section/email/email.component';
+import { ManageModule } from './manage/manage.module';
 
 
 
@@ -61,6 +63,7 @@ import { BackButtonComponent } from './settings-info/back-button/back-button.com
     DraftComponent,
     ProfileComponent,
     BackButtonComponent,
+    EmailComponent,
 
   ],
     imports: [
@@ -85,7 +88,8 @@ import { BackButtonComponent } from './settings-info/back-button/back-button.com
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule ,// Only required for storage features
-   SidebarModule.forRoot()
+   SidebarModule.forRoot(),
+   ManageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

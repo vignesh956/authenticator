@@ -1,0 +1,203 @@
+<!-- <p>email works!</p> -->
+<div class="card">
+    <div class="email">
+      <app-back-button></app-back-button>
+      <h2>Please DocuSign: Notes_210215_111904_81a (1).pdf </h2><br>
+      <div>
+        <p class="envelpe">Envelope ID</p>
+        <p style="margin: 0;">Last change on <span>6/6/2021 </span>| <span>09:44:03 am</span></p>
+        <p>Sent on <span>2/24/2021 </span>| <span> 05:28:19 pm </span></p>
+      </div>
+      <h3>completed</h3>
+      <div style="display:flex;     justify-content: space-between;">
+        <div style="display: flex;">
+          <!-- <1move></1move> -->
+          <div>
+              <button mat-raised-button  (click)="open(mymodal)">Move</button>
+  
+            <!-- <button type="button" class="btn btn-primary">Move</button> -->
+            <ng-template #mymodal let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Move to Folder</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+  
+              <div class="modal-body">
+                <a style="color: rgb(46, 45, 45) !important;"> <i class="fas fa-envelope-open"></i>
+                  <span style="padding-left: 1rem;">inbox</span></a>
+              </div>
+              <hr style="margin: 0;">
+  
+              <div class="modal-header">
+                <a style="color: rgb(46, 45, 45) !important;"> <i class="fas fa-inbox"></i>
+                  <span style="padding-left: 1rem;">outbox</span> </a>
+              </div>
+              <div class="  modal-header" style="    justify-content: flex-start !important;">
+                <div>
+                  <button type="button" class="btn btn-primary">Move</button>
+                </div>
+                <div id="folder" style="  padding-left: 2rem !important;
+  font-size: medium;
+  font-weight: 500;">
+                  <p style="margin: 0;">New FOLDER</p>
+  
+                </div>
+                <div (click)="modal.dismiss('Cross click')" style="  padding-left: 2rem !important;
+  font-size: medium;
+  font-weight: 500;">
+                  <p style="margin: 0;">Cancel</p>
+  
+                </div>
+              </div>
+            </ng-template>
+  
+          </div>
+          <!-- <1move></1move> -->
+  
+        
+         
+          <div style="padding-left: 1rem;">
+  
+  <!-- <more></more> -->
+  
+              <!-- <div class="dropdown" mdbDropdown>
+                  <button type="button" class="btn btn-primary"data-toggle="dropdown" >MORE <span><i class="fas fa-angle-down"></i></span></button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" (click)="open(Delete)" >Trash</a>
+                    <a class="dropdown-item" (click)="open(histroy)" >Histroy</a>
+                  </div>
+                </div> -->
+                <button mat-raised-button [matMenuTriggerFor]="menu">MORE <i class="fas fa-angle-down"></i></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="open(Delete)">Trash</button>
+    <button mat-menu-item (click)="open(histroy)" >Histroy</button>
+  </mat-menu>
+  
+                 <!-- <more></more> -->
+        <!-- <trash></trash> -->
+            <ng-template #Delete let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Delete Envelopey </h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-header">
+                <p>Deleted envelopes are available in your Deleted bin for a short time (up to 24 hours) before they're
+                  removed from direct access.</p>
+              </div>
+              <hr style="margin: 0;">
+              <div class="  modal-header" style="    justify-content: flex-start !important;">
+                <div>
+                  <button type="button" class="btn btn-primary">DELETE</button>
+                </div>
+  
+                <div (click)="modal.dismiss('Cross click')" style="  padding-left: 2rem !important;
+  font-size: medium;
+  font-weight: 500;">
+                  <p style="margin: 0;">Cancel</p>
+  
+                </div>
+              </div>
+  
+            </ng-template>
+                  <!-- <trash></trash> -->
+  
+  <!-- <histroy></histroy> -->
+  <ng-template #histroy let-modal >
+      <div class="modal-content" style="width: 68vw !important; 
+      margin-left: -12vw;">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Envelope History </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="model-body" style="padding: 2rem;">
+  <h2>Details</h2>
+  <div  class="around">
+      <div>
+          <p class="subject">Subject </p>
+          <p>Please DocuSign: Notes_210215_111904_81a (1).pdf
+          </p>
+          <p class="subject">Envelope ID</p>
+          <p>735e6169-6660-49ae-94ca-cd6ab89c1603  </p>
+          <p class="subject">Date Sent</p>
+          <p>2/24/2021 | 05:28:19 pm </p>
+          <p class="subject">Date Created</p>
+          <p>2/24/2021 | 05:28:04 pm </p>
+          <p class="subject">Location </p>
+          <p>Online
+          </p>
+      </div>
+      <div>
+          <p class="subject">Enclosed Documents </p>
+          <p>Notes_210215_111904_81a (1).pdf, Summary </p>
+          <p class="subject">Envelope Recipients</p>
+          <p>praveen dodda </p>
+          <p class="subject">Status</p>
+          <p>Completed </p>
+          <p class="subject">Status Date </p>
+          <p>6/6/2021 | 09:44:03 am</p>
+          <p class="subject">Holder </p>
+          <p>praveen dodda  </p>
+      </div>
+  </div>
+  
+      </div>
+  
+  
+      <!-- <div class="  modal-header" style="    justify-content: flex-start !important;">
+        <div>
+          <button type="button" class="btn btn-primary">DOWNLOAD CERTIFICATE</button>
+        </div>
+  
+        <div style="padding-left: 3rem;">
+          <button type="button" class="btn btn-primary">PIRNT</button>
+        </div>
+      </div> -->
+  </div>
+    </ng-template>
+    <!-- <histroy></histroy> -->
+  
+          </div>
+  
+        </div>
+        <!-- <div style="display: flex; align-items: center; ">
+          <div>
+            <p style="margin: 0; font-size: 1.4rem;"><i class="fas fa-download"></i></p>
+          </div>
+          <div style="padding-left: 2rem; font-size: 1.5rem;">
+            <p style="margin: 0;"><i class="fas fa-print"></i></p>
+          </div>
+        </div> -->
+      </div>
+      <hr>
+      <div>
+        <h2>Recipients</h2>
+        <div style="display: flex; justify-content: space-between; padding-right: 1rem;">
+          <div>
+            <p>praveen dodda<br>
+              <span>praveendodda7@gmail.com</span>
+            </p>
+  
+          </div>
+          <div>
+            <h4 style="margin: 0;"> Signed</h4>
+            <p style="margin: 0;"><span>on 6/6/2021 </span>| <span>09:44:03 am</span></p>
+            <p class="envelpe">Signed in location</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <h2>Message</h2>
+        <div class="text-nowrap" style="width: 8rem;">
+          No message has been entered.
+        </div>
+      </div>
+    </div>
+  </div>
+  

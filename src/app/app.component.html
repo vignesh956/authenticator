@@ -24,14 +24,17 @@
            
           <ul style="list-style-type:none;"class="filed-list" >
             <li class="group-filed">
+              <a class="out" (click)="togglesidebar()" [routerLink]="['home']" routerLinkActive="active"><i
+                class="fas fa-home "></i><span>Dashboard</span></a></li>
+                <li class="group-filed">
+                  <a class="out" (click)="togglesidebar()" [routerLink]="['create-document']" routerLinkActive="active">
+                  <i class="fas fa-folder-plus"></i> Document</a></li>
+
+            <li class="group-filed">
                 <a class="out" (click)="togglesidebar()" [routerLink]="['dashboard']" routerLinkActive="active"> <i
-                  class="fas fa-home "></i><span>dashboard</span></a></li>
-            <li class="group-filed">
-                <a class="out" (click)="togglesidebar()" [routerLink]="['home']" routerLinkActive="active"><i
-                  class="fas fa-home "></i><span>Home</span></a></li>
-            <li class="group-filed">
-                <a class="out" (click)="togglesidebar()" [routerLink]="['create-document']" routerLinkActive="active">
-                <i class="fas fa-folder-plus"></i> Document</a></li>
+                  class="fas fa-home "></i><span>manage Section</span></a></li>
+         
+           
             <li class="group-filed">
                 <a class="out" (click)="togglesidebar()" [routerLink]="['report']"
                 routerLinkActive="active"><i class=" set fas fa-bug"></i>Reports</a></li>
@@ -49,10 +52,14 @@
 
         <ul class="filed-list">
           <li class="group-filed">
-            <p [routerLink]="['dashboard']" routerLinkActive="active">
-              <i class="fas fa-home " style="padding: 0 15px 0 0; margin: 0px 0 0 43px;"></i> <span
-                class="names">Dashboard</span>
-            </p>
+
+            <a [routerLink]="['home']" routerLinkActive="active">
+              <i class="fas fa-home "></i><span class="names">
+                Dashboard
+              </span> </a>
+
+            <div>
+            </div>
           </li>
 
 
@@ -62,15 +69,12 @@
                 Create Document
               </span> </a>
           </li>
+          
           <li class="group-filed">
-
-            <a [routerLink]="['home']" routerLinkActive="active">
-              <i class="fas fa-home "></i><span class="names">
-                home
-              </span> </a>
-
-            <div>
-            </div>
+            <p [routerLink]="['dashboard']" routerLinkActive="active">
+              <i class="fas fa-home " style="padding: 0 15px 0 0; margin: 0px 0 0 43px;"></i> <span
+                class="names">manage Section</span>
+            </p>
           </li>
           <li class="group-filed">
 
