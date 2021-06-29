@@ -71,5 +71,6 @@ export class SettingPagesService {
 
     return this.http.post('http://us-central1-etop-sign-0407.cloudfunctions.net/app/settings/get-image-urls', payload, authorization);
   }
+  
 }
 

@@ -9,12 +9,12 @@
                 <span class="font-medium" style="color: white;">signDOC</span><br>
 
                 <button class="icon-mat" mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-          <mat-icon *ngIf="!sidenav.opened">
+          <!-- <mat-icon *ngIf="!sidenav.opened">
             menu
           </mat-icon>
           <mat-icon *ngIf="sidenav.opened">
             close
-          </mat-icon>
+          </mat-icon> -->
         </button>
                 <mat-sidenav-container class="mat-nav">
                     <mat-sidenav>
@@ -98,7 +98,7 @@
         </div>
         <div id="page-content-wrapper">
             <div class="container-fluid main-content">
-                <!-- <app-home></app-home> -->
+                <router-outlet></router-outlet>
 
 
             </div>
