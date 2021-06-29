@@ -41,6 +41,8 @@ import { BackButtonComponent } from './settings-info/back-button/back-button.com
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { FoooterComponent } from './foooter/foooter.component';
+import { EmailComponent } from './manage-section/email/email.component';
+import { ManageModule } from './manage/manage.module';
 
 
 
@@ -64,9 +66,7 @@ import { FoooterComponent } from './foooter/foooter.component';
     DraftComponent,
     ProfileComponent,
     BackButtonComponent,
-    SidebarComponent,
-    HeaderComponent,
-    FoooterComponent,
+    EmailComponent,
 
   ],
     imports: [
@@ -91,7 +91,8 @@ import { FoooterComponent } from './foooter/foooter.component';
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule ,// Only required for storage features
-   SidebarModule.forRoot()
+   SidebarModule.forRoot(),
+   ManageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,29 +1,28 @@
-
 <div>
   <div class="check-card">
     <div class="inbox-table">
       <div style="display: flex;">
-        <section>
+        <!-- <section>
           <mat-checkbox color="primary"></mat-checkbox>
-        </section>
-        <div class=" name-color w-6 h-6 flex-none image-fit relative ml-5">
+        </section> -->
+        <!-- <div class=" name-color w-6 h-6 flex-none image-fit relative ml-5">
           <img alt="Midone Tailwind HTML Admin Template" src="assets/profile-12.jpg" class="rounded-full">
-        </div>
-        <div class="sai">
-          <p >sai kiran </p>
+        </div> -->
+        <!-- <div class="sai" [routerLink]="['/email']" routerLinkActive="active">
+          <p [routerLink]="['/email']" routerLinkActive="active"> sai kiran </p>
 
-        </div>
+        </div> -->
       </div>
-      <div class="text">
+      <div class="text" [routerLink]="['/email']" routerLinkActive="active">
         <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual
           form of a document or a typeface without</p>
           
 
       </div>
-      <div class="time">01:10 PM</div>
+      <div class="time">2/24/2021 | 05:22pm</div>
     </div>
     <hr class="line">
-    <div class="inbox-table">
+    <!-- <div class="inbox-table">
         <div style="display: flex;">
           <section>
             <mat-checkbox color="primary"></mat-checkbox>
@@ -43,6 +42,7 @@
   
         </div>
         <div class="time">01:10 PM</div>
-      </div>
+      </div> -->
   </div>
 </div>
+<router-outlet></router-outlet>

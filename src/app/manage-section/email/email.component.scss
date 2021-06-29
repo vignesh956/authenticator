@@ -1,0 +1,29 @@
+
+.card{
+    width: 100%;
+//   height: 550px ;
+margin-top: 1rem;
+  .email{
+    margin: 1rem 1.4rem;
+  }
+   h2{
+       color: black;
+   }
+   .envelpe{
+       color: rgb(50, 50, 167);
+       margin: 0;
+   }
+
+   
+}
+.subject{
+    font-weight: bold;
+    margin: 0;
+}
+.around{
+    display: flex;
+    justify-content: space-between;
+}
+::ng-deep.side{
+    font-size: 2rem !important;
+}
