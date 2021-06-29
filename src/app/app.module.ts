@@ -38,6 +38,9 @@ import { DraftComponent } from './manage-section/draft/draft.component';
 import { ProfileComponent } from './settings-info/profile/profile.component';
 import { SettingsModule } from './settings/settings.module';
 import { BackButtonComponent } from './settings-info/back-button/back-button.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { HeaderComponent } from './header/header.component';
+import { FoooterComponent } from './foooter/foooter.component';
 
 
 
@@ -61,6 +64,9 @@ import { BackButtonComponent } from './settings-info/back-button/back-button.com
     DraftComponent,
     ProfileComponent,
     BackButtonComponent,
+    SidebarComponent,
+    HeaderComponent,
+    FoooterComponent,
 
   ],
     imports: [

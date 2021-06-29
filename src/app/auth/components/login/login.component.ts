@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.verifiedemail = true;
   }
 
-  constoptions= { positionClass:'toast-custom' };
+  constoptions = { positionClass: 'toast-custom' };
 
   get f() { return this.loginForm.controls; }
   submitted: boolean;
@@ -52,19 +52,23 @@ export class LoginComponent implements OnInit {
       this.SpinnerService.hide();
       console.log(res, 'sssssssssssssssssssss');
       const uid = {
-        'uid': res.user?.emailVerified
+        // 'uid': res.user?.emailVerified;
+        'uid': res.user?.uid
       };
       this.cd.sendUid(uid).subscribe((resp: any) => {
         this.SpinnerService.hide();
         console.log(resp);
         if (resp.status === 200) {
-          const s = resp.data?.token;
-          console.log(resp.data?.token , "token");
-          
+          console.log(resp, 'login');
+          const s = resp?.token;
+          console.log(resp?.token, "token");
           localStorage.setItem('token', s);
-          this.router.navigate(['dashboard']);
+          // tslint:disable-next-line:no-shadowed-variable
+          const uid = res.user?.uid;
+          localStorage.setItem('uid', uid);
+          this.router.navigate(['side']);
         }
-        this.router.navigate(['dashboard' ]);
+        this.router.navigate(['side']);
         if (resp.status === 404) {
           if (resp.error === 'required-fields') {
           }
@@ -77,7 +81,7 @@ export class LoginComponent implements OnInit {
       if (err.code === 'auth/user-not-found') {
 
         this.snackbarService.openSnackBar('Email not found !!');
-        
+
         // this.toaster.showError("Email not found !!", "", );
         // this.emailError = 'Email Already exists';
       }

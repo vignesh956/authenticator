@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyAcom6IAVVsdwSveMUbAJOWOWbu1aGT_yE",
-    authDomain: "etop-sign-2807.firebaseapp.com",
-    projectId: "etop-sign-2807",
-    storageBucket: "etop-sign-2807.appspot.com",
-    messagingSenderId: "437295056907",
-    appId: "1:437295056907:web:79d3edfb9755a82f625f0e",
-    measurementId: "G-VGRRDE4D8K"
+    apiKey: "AIzaSyDiMa4EzTfmoJbMMUC5jdQHmSYA3qZGizQ",
+    authDomain: "etop-sign-0407.firebaseapp.com",
+    projectId: "etop-sign-0407",
+    storageBucket: "etop-sign-0407.appspot.com",
+    messagingSenderId: "233986317277",
+    appId: "1:233986317277:web:dbcdf97ba33e47e61cb434",
+    measurementId: "G-D6SNVQG9HG"
   }
 };
 

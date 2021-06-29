@@ -1,0 +1,24 @@
+.header {
+    height: 50px;
+    background-color: silver;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    color: blue;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+}
+
+.header a {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px auto;
+    text-decoration: none;
+    color: blue;
+    box-sizing: border-box;
+    border-bottom: 1px solid red;
+}

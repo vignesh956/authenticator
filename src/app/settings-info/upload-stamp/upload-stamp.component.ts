@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SettingPagesService } from '../setting-pages.service';
 @Component({
@@ -10,11 +11,17 @@ export class UploadStampComponent implements OnInit {
   imageError: any;
   isImageSaved: boolean = false;
   cardImageBase64: any;
+  token: any;
+  stampdata: any;
 
-
-  constructor(private settingService: SettingPagesService) { }
+  constructor(private settingService: SettingPagesService,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
+    // this.settingService.getstamp().subscribe(res => {
+    //   console.log(res, 'stamp');
+    //   this.stampdata = res;
+    // });
   }
 
 
@@ -42,12 +49,16 @@ export class UploadStampComponent implements OnInit {
   }
 
   onupload() {
-    const payload = {
-      avatar: this.cardImageBase64
+    const token = localStorage.getItem('token');
+    const payload =
+    {
+      stamp: this.cardImageBase64
     };
-    this.settingService.addimg(payload).subscribe(add => {
-      console.log(add, 'successfull added');
+    this.settingService.uploadstamp(payload, token).subscribe(res => {
+      console.log(res, 'successfull added stamp');
     });
   }
+
+
 
 }

@@ -8,12 +8,15 @@ import { MenuComponent } from './menu/menu.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ChangePasswordComponent } from './settings-info/change-password/change-password.component';
 import { SettingsComponent } from './settings/settings.component';
-// import {AuthenticationGuard } from '../app/guards/authentication.guard'; 
+import {AuthenticationGuard } from '../app/guards/authentication.guard'; 
+import { Sidebar } from 'ng-sidebar';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
 
-  // {path: 'dashboard' , component: DashbordComponent  , canActivate : [AuthenticationGuard] },
-  {path: 'dashboard' , component: DashbordComponent  },
+  {path: 'dashboard' , component: DashbordComponent  , canActivate : [AuthenticationGuard] },
+  {path: 'side' , component: SidebarComponent},
+  // {path: 'dashboard' , component: DashbordComponent  },
   {path: 'home' , component: HomeComponent},
   {path: 'report' , component: ReportsComponent},
   {path: 'setting' , component: SettingsComponent},
@@ -21,7 +24,7 @@ const routes: Routes = [
   {path: 'create-document' , component: CreateDocumentComponent},
   {path: 'change' , component: ChangePasswordComponent},
  
-  // {path: '' ,  redirectTo:'signup', pathMatch: 'full'},
+  {path: '' ,  redirectTo:'signup', pathMatch: 'full'},
   // { path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];
 

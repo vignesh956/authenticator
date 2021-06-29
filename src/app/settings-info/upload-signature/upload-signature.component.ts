@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SnackbarService } from 'src/app/snackbar.service';
 import { SettingPagesService } from '../setting-pages.service';
 
 @Component({
@@ -14,7 +16,10 @@ export class UploadSignatureComponent implements OnInit {
   cardImageBase64: any;
 
 
-  constructor(private settingService: SettingPagesService) { }
+  constructor(
+    private settingService: SettingPagesService,
+    private snackbarService: SnackbarService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -44,11 +49,22 @@ export class UploadSignatureComponent implements OnInit {
   }
 
   onupload() {
-    const payload = {
-      avatar: this.cardImageBase64
+    alert('aa')
+    const token = localStorage.getItem('token');
+    const payload =
+    {
+      signature: this.cardImageBase64
     };
-    this.settingService.addimg(payload).subscribe(add => {
-      console.log(add, 'successfull added');
+    this.settingService.uploadsignature(payload, token).subscribe((resp: any) => {
+      if (resp.status === 201) {
+        console.log(resp);
+        this.snackbarService.openSnackBar('successfull added signature !!');
+      }
+      if (resp.status === 500) {
+        this.snackbarService.openSnackBar('unable to verify token');
+        localStorage.clear();
+        this.router.navigate(['/login']);
+      }
     });
   }
 

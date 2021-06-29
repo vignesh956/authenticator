@@ -36,29 +36,29 @@ export class CredentialsService {
 
 
   addUser(obj: any) {
-    return this.http.post('https://us-central1-etop-sign-2807.cloudfunctions.net/app/user/create', obj);
+    return this.http.post('https://us-central1-etop-sign-0407.cloudfunctions.net/app/user/create', obj);
   }
 
   sendOtp(email: any) {
-    return this.http.post('https://us-central1-etop-sign-2807.cloudfunctions.net/app/user/send-otp', email);
+    return this.http.post('https://us-central1-etop-sign-0407.cloudfunctions.net/app/user/send-otp', email);
   }
 
   resendOtp(payload: any) {
     console.log(payload, "resend otp");
-    return this.http.post('https://us-central1-etop-sign-2807.cloudfunctions.net/app/user/send-otp', payload);
+    return this.http.post('https://us-central1-etop-sign-0407.cloudfunctions.net/app/user/send-otp', payload);
   }
   verifyOtp(payload: any) {
-    return this.http.post('https://us-central1-etop-sign-2807.cloudfunctions.net/app/user/verify-otp', payload);
+    return this.http.post('https://us-central1-etop-sign-0407.cloudfunctions.net/app/user/verify-otp', payload);
   }
   getuser() {
-    return this.http.get('https://us-central1-etop-sign-2807.cloudfunctions.net/app/user');
+    return this.http.get('https://us-central1-etop-sign-0407.cloudfunctions.net/app/user');
   }
   loginUser(payload: any) {
-    return this.http.post('https://us-central1-etop-sign-2807.cloudfunctions.net/app/user/sign-in', payload);
+    return this.http.post('https://us-central1-etop-sign-0407.cloudfunctions.net/app/user/sign-in', payload);
   }
 
   updatepassword(newPassword: any) {
-    return this.http.post('https://us-central1-etop-sign-2807.cloudfunctions.net/app/user/forgot-password', newPassword);
+    return this.http.post('https://us-central1-etop-sign-0407.cloudfunctions.net/app/user/forgot-password', newPassword);
   }
   login(email: string, password: string) {
     console.log(email);
@@ -70,7 +70,7 @@ export class CredentialsService {
   }
 
   sendUid(uid: any) {
-    return this.http.post('https://us-central1-etop-sign-2807.cloudfunctions.net/app/user/sign-in', uid);
+    return this.http.post('https://us-central1-etop-sign-0407.cloudfunctions.net/app/user/sign-in', uid);
   }
 
 

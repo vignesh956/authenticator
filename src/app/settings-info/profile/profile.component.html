@@ -5,36 +5,55 @@
 
     <div class="profile-info">
 
-        <div>
+        <div class="mobile-view">
             <form [formGroup]="userDetailsForm" (ngSubmit)="submitDetails()">
-                <div class="row">
-                    <button (click)="editDetails()" *ngIf="!editUserData">
-                        edit
-                    </button>
-                </div>
-                <!-- <div class="col-12 avatar-col">
-                    <div>
-                        <img src="../../assets/live-person-icon.png" style="border-radius: 150px;">
+                <div class="row edit-info">
+                    <div class="edit-button">
+                        <p (click)="editDetails()" *ngIf="!editUserData">
+                            edit
+                        </p>
+                        <i class="fas fa-edit"></i>
                     </div>
-                </div> -->
+                </div>
 
-                <!-- <div class="info-space">
 
-                    <input *ngIf="editUserData" placeholder="Enter name" formControlName="name" type="file">
 
-                    <p *ngIf="!editUserData" class="labelDetails cur_ptr">
-                        {{users.profile ? users.profile : ""}}
-                    </p>
-                </div> -->
+
+                <div class="row">
+                    <div class="upload-space">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="{{url}}" *ngIf="!editUserData " style="    width: 300px;">
+                                <input type="file" (change)="onfileselet($event)" *ngIf="editUserData">
+
+                                <ng-container *ngIf="isImageSaved; ">
+
+                                    <!-- <img [src]="cardImageBase64" style="    height: 17vh; 
+                            width: 10vw;" *ngIf="!editUserData" /> -->
+
+
+                                </ng-container>
+                            </div>
+                            <div class="col-12">
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
 
 
 
                 <div class="info-space">
 
-                    <input *ngIf="editUserData" placeholder="Enter name" formControlName="name" type="text">
+                    <input *ngIf="editUserData" placeholder="enter your phone number" formControlName="name" type="text">
 
                     <p *ngIf="!editUserData" class="labelDetails cur_ptr">
-                        {{users?.name}}
+                        {{users?.displayName}}
                     </p>
                 </div>
                 <div class="info-space">
@@ -43,14 +62,123 @@
 
                 <div class="info-space">
 
-                    <input *ngIf="editUserData" placeholder="enter your phone number" formControlName="phone" type="number">
+                    <input *ngIf="editUserData" placeholder="enter your phone number" formControlName="phone" type="text">
 
                     <p *ngIf="!editUserData" class="labelDetails cur_ptr">
-                        {{users?.phone}}
+                        {{users?.phoneNumber}}
                     </p>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <div class="row">
+                    <div class="upload-space">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="{{url}}" *ngIf="!editUserData">
+                                <input type="file" (change)="onfileselet($event)" *ngIf="editUserData">
+
+                                <ng-container *ngIf="isImageSaved; ">
+
+                                    <img [src]="cardImageBase64" style="    height: 17vh; 
+                            width: 10vw;" *ngIf="!editUserData" />
+
+
+                                </ng-container>
+                            </div>
+                            <div class="col-12">
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div> -->
+
+
+
+                <!-- <div class="abc">
+                    <mat-form-field appearance="outline" class="example-full-width ">
+                        <mat-label>old password NUmber </mat-label>
+                        <input matInput formControlName="name" type="password" placeholder="enter your old password  " required ngModel *ngIf="editUserData">
+
+
+                    </mat-form-field>
+
+                    <mat-error *ngIf="f.confirmPassword && f.confirmPassword.errors && (f.confirmPassword.dirty || f.confirmPassword.touched )">
+                        <span *ngIf="  f.confirmPassword.errors.required">
+                            Confirm password is required
+                        </span>
+                        <span *ngIf="f.confirmPassword.errors.pattern">
+                            Please, Enter 6 digits
+                        </span>
+
+                    </mat-error>
+                    <p *ngIf="!editUserData" class="labelDetails cur_ptr">
+                        {{users?.displayName}}
+                    </p>
+                </div> -->
+
+
+
+                <!-- <div class="info-space">
+                    <p>{{users.email}}</p>
+                </div> -->
+
+
+
+
+
+                <!-- <div class="abc">
+                    <mat-form-field appearance="outline" class="example-full-width ">
+                        <mat-label>old password NUmber </mat-label>
+                        <input matInput formControlName="phone" type="password" placeholder="enter your old password  " required ngModel *ngIf="editUserData">
+
+
+                    </mat-form-field>
+
+                    <mat-error *ngIf="f.confirmPassword && f.confirmPassword.errors && (f.confirmPassword.dirty || f.confirmPassword.touched )">
+                        <span *ngIf="  f.confirmPassword.errors.required">
+                            Confirm password is required
+                        </span>
+                        <span *ngIf="f.confirmPassword.errors.pattern">
+                            Please, Enter 6 digits
+                        </span>
+
+                    </mat-error>
+                    <p *ngIf="!editUserData" class="labelDetails cur_ptr">
+                        {{users?.phoneNumber}}
+                    </p>
+                </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div>
-                    <p class="logout">Logout</p>
+                    <p class="logout" (click)="logout()">Logout</p>
                 </div>
 
                 <button *ngIf="editUserData" type="submit" class="editDetails">Submit</button>
